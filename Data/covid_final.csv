@@ -1,0 +1,1119 @@
+"Country_code","Country","WHO_region","Week","New_cases"
+"AE","United Arab Emirates","Eastern Mediterranean",2021 W49,441
+"AE","United Arab Emirates","Eastern Mediterranean",2021 W50,1133
+"AE","United Arab Emirates","Eastern Mediterranean",2021 W51,5678
+"AE","United Arab Emirates","Eastern Mediterranean",2021 W52,14963
+"AE","United Arab Emirates","Eastern Mediterranean",2022 W01,18373
+"AE","United Arab Emirates","Eastern Mediterranean",2022 W02,19315
+"AE","United Arab Emirates","Eastern Mediterranean",2022 W03,20705
+"AE","United Arab Emirates","Eastern Mediterranean",2022 W04,17853
+"AE","United Arab Emirates","Eastern Mediterranean",2022 W05,14903
+"AE","United Arab Emirates","Eastern Mediterranean",2022 W06,11329
+"AE","United Arab Emirates","Eastern Mediterranean",2022 W07,6911
+"AE","United Arab Emirates","Eastern Mediterranean",2022 W08,4864
+"AE","United Arab Emirates","Eastern Mediterranean",2022 W09,3731
+"AF","Afghanistan","Eastern Mediterranean",2021 W49,180
+"AF","Afghanistan","Eastern Mediterranean",2021 W50,134
+"AF","Afghanistan","Eastern Mediterranean",2021 W51,157
+"AF","Afghanistan","Eastern Mediterranean",2021 W52,210
+"AF","Afghanistan","Eastern Mediterranean",2022 W01,233
+"AF","Afghanistan","Eastern Mediterranean",2022 W02,333
+"AF","Afghanistan","Eastern Mediterranean",2022 W03,870
+"AF","Afghanistan","Eastern Mediterranean",2022 W04,2118
+"AF","Afghanistan","Eastern Mediterranean",2022 W05,4046
+"AF","Afghanistan","Eastern Mediterranean",2022 W06,4440
+"AF","Afghanistan","Eastern Mediterranean",2022 W07,1778
+"AF","Afghanistan","Eastern Mediterranean",2022 W08,1250
+"AF","Afghanistan","Eastern Mediterranean",2022 W09,1167
+"AL","Albania","Europe",2021 W49,2122
+"AL","Albania","Europe",2021 W50,2025
+"AL","Albania","Europe",2021 W51,1993
+"AL","Albania","Europe",2021 W52,3164
+"AL","Albania","Europe",2022 W01,7781
+"AL","Albania","Europe",2022 W02,12453
+"AL","Albania","Europe",2022 W03,15472
+"AL","Albania","Europe",2022 W04,10670
+"AL","Albania","Europe",2022 W05,6883
+"AL","Albania","Europe",2022 W06,4043
+"AL","Albania","Europe",2022 W07,2156
+"AL","Albania","Europe",2022 W08,1261
+"AL","Albania","Europe",2022 W09,707
+"AM","Armenia","Europe",2021 W49,1815
+"AM","Armenia","Europe",2021 W50,1098
+"AM","Armenia","Europe",2021 W51,845
+"AM","Armenia","Europe",2021 W52,526
+"AM","Armenia","Europe",2022 W01,848
+"AM","Armenia","Europe",2022 W02,1762
+"AM","Armenia","Europe",2022 W03,4094
+"AM","Armenia","Europe",2022 W04,14722
+"AM","Armenia","Europe",2022 W05,23524
+"AM","Armenia","Europe",2022 W06,16422
+"AM","Armenia","Europe",2022 W07,9085
+"AM","Armenia","Europe",2022 W08,4229
+"AM","Armenia","Europe",2022 W09,1648
+"AT","Austria","Europe",2021 W49,32371
+"AT","Austria","Europe",2021 W50,21592
+"AT","Austria","Europe",2021 W51,15191
+"AT","Austria","Europe",2021 W52,20003
+"AT","Austria","Europe",2022 W01,47308
+"AT","Austria","Europe",2022 W02,101845
+"AT","Austria","Europe",2022 W03,159626
+"AT","Austria","Europe",2022 W04,221761
+"AT","Austria","Europe",2022 W05,231381
+"AT","Austria","Europe",2022 W06,222310
+"AT","Austria","Europe",2022 W07,201339
+"AT","Austria","Europe",2022 W08,189976
+"AT","Austria","Europe",2022 W09,210607
+"AZ","Azerbaijan","Europe",2021 W49,8369
+"AZ","Azerbaijan","Europe",2021 W50,6034
+"AZ","Azerbaijan","Europe",2021 W51,4722
+"AZ","Azerbaijan","Europe",2021 W52,3192
+"AZ","Azerbaijan","Europe",2022 W01,3368
+"AZ","Azerbaijan","Europe",2022 W02,4239
+"AZ","Azerbaijan","Europe",2022 W03,7116
+"AZ","Azerbaijan","Europe",2022 W04,19307
+"AZ","Azerbaijan","Europe",2022 W05,39839
+"AZ","Azerbaijan","Europe",2022 W06,47148
+"AZ","Azerbaijan","Europe",2022 W07,33381
+"AZ","Azerbaijan","Europe",2022 W08,12551
+"AZ","Azerbaijan","Europe",2022 W09,4698
+"BA","Bosnia and Herzegovina","Europe",2021 W49,3438
+"BA","Bosnia and Herzegovina","Europe",2021 W50,3249
+"BA","Bosnia and Herzegovina","Europe",2021 W51,2948
+"BA","Bosnia and Herzegovina","Europe",2021 W52,4421
+"BA","Bosnia and Herzegovina","Europe",2022 W01,8337
+"BA","Bosnia and Herzegovina","Europe",2022 W02,14469
+"BA","Bosnia and Herzegovina","Europe",2022 W03,17250
+"BA","Bosnia and Herzegovina","Europe",2022 W04,13819
+"BA","Bosnia and Herzegovina","Europe",2022 W05,9907
+"BA","Bosnia and Herzegovina","Europe",2022 W06,7897
+"BA","Bosnia and Herzegovina","Europe",2022 W07,4488
+"BA","Bosnia and Herzegovina","Europe",2022 W08,2660
+"BA","Bosnia and Herzegovina","Europe",2022 W09,1364
+"BD","Bangladesh","South-East Asia",2021 W49,1882
+"BD","Bangladesh","South-East Asia",2021 W50,1758
+"BD","Bangladesh","South-East Asia",2021 W51,2170
+"BD","Bangladesh","South-East Asia",2021 W52,3213
+"BD","Bangladesh","South-East Asia",2022 W01,7234
+"BD","Bangladesh","South-East Asia",2022 W02,24011
+"BD","Bangladesh","South-East Asia",2022 W03,67425
+"BD","Bangladesh","South-East Asia",2022 W04,100196
+"BD","Bangladesh","South-East Asia",2022 W05,76200
+"BD","Bangladesh","South-East Asia",2022 W06,48132
+"BD","Bangladesh","South-East Asia",2022 W07,23627
+"BD","Bangladesh","South-East Asia",2022 W08,9389
+"BD","Bangladesh","South-East Asia",2022 W09,4586
+"BE","Belgium","Europe",2021 W49,91130
+"BE","Belgium","Europe",2021 W50,58267
+"BE","Belgium","Europe",2021 W51,43587
+"BE","Belgium","Europe",2021 W52,78151
+"BE","Belgium","Europe",2022 W01,153631
+"BE","Belgium","Europe",2022 W02,194965
+"BE","Belgium","Europe",2022 W03,345830
+"BE","Belgium","Europe",2022 W04,326132
+"BE","Belgium","Europe",2022 W05,191544
+"BE","Belgium","Europe",2022 W06,104016
+"BE","Belgium","Europe",2022 W07,64971
+"BE","Belgium","Europe",2022 W08,45338
+"BE","Belgium","Europe",2022 W09,43339
+"BG","Bulgaria","Europe",2021 W49,11702
+"BG","Bulgaria","Europe",2021 W50,10181
+"BG","Bulgaria","Europe",2021 W51,9545
+"BG","Bulgaria","Europe",2021 W52,14302
+"BG","Bulgaria","Europe",2022 W01,30517
+"BG","Bulgaria","Europe",2022 W02,39528
+"BG","Bulgaria","Europe",2022 W03,59152
+"BG","Bulgaria","Europe",2022 W04,61831
+"BG","Bulgaria","Europe",2022 W05,54043
+"BG","Bulgaria","Europe",2022 W06,42030
+"BG","Bulgaria","Europe",2022 W07,31128
+"BG","Bulgaria","Europe",2022 W08,21383
+"BG","Bulgaria","Europe",2022 W09,13015
+"BH","Bahrain","Eastern Mediterranean",2021 W49,234
+"BH","Bahrain","Eastern Mediterranean",2021 W50,373
+"BH","Bahrain","Eastern Mediterranean",2021 W51,1108
+"BH","Bahrain","Eastern Mediterranean",2021 W52,3159
+"BH","Bahrain","Eastern Mediterranean",2022 W01,8201
+"BH","Bahrain","Eastern Mediterranean",2022 W02,14536
+"BH","Bahrain","Eastern Mediterranean",2022 W03,22052
+"BH","Bahrain","Eastern Mediterranean",2022 W04,34556
+"BH","Bahrain","Eastern Mediterranean",2022 W05,51350
+"BH","Bahrain","Eastern Mediterranean",2022 W06,45167
+"BH","Bahrain","Eastern Mediterranean",2022 W07,29884
+"BH","Bahrain","Eastern Mediterranean",2022 W08,20967
+"BH","Bahrain","Eastern Mediterranean",2022 W09,15781
+"BT","Bhutan","South-East Asia",2021 W49,8
+"BT","Bhutan","South-East Asia",2021 W50,8
+"BT","Bhutan","South-East Asia",2021 W51,3
+"BT","Bhutan","South-East Asia",2021 W52,0
+"BT","Bhutan","South-East Asia",2022 W01,121
+"BT","Bhutan","South-East Asia",2022 W02,147
+"BT","Bhutan","South-East Asia",2022 W03,721
+"BT","Bhutan","South-East Asia",2022 W04,1036
+"BT","Bhutan","South-East Asia",2022 W05,1407
+"BT","Bhutan","South-East Asia",2022 W06,1337
+"BT","Bhutan","South-East Asia",2022 W07,2649
+"BT","Bhutan","South-East Asia",2022 W08,2116
+"BT","Bhutan","South-East Asia",2022 W09,2604
+"BY","Belarus","Europe",2021 W49,11213
+"BY","Belarus","Europe",2021 W50,9903
+"BY","Belarus","Europe",2021 W51,9429
+"BY","Belarus","Europe",2021 W52,7820
+"BY","Belarus","Europe",2022 W01,7293
+"BY","Belarus","Europe",2022 W02,6581
+"BY","Belarus","Europe",2022 W03,10608
+"BY","Belarus","Europe",2022 W04,13698
+"BY","Belarus","Europe",2022 W05,30475
+"BY","Belarus","Europe",2022 W06,53969
+"BY","Belarus","Europe",2022 W07,52889
+"BY","Belarus","Europe",2022 W08,37399
+"BY","Belarus","Europe",2022 W09,16007
+"CH","Switzerland","Europe",2021 W49,64853
+"CH","Switzerland","Europe",2021 W50,60640
+"CH","Switzerland","Europe",2021 W51,64938
+"CH","Switzerland","Europe",2021 W52,106736
+"CH","Switzerland","Europe",2022 W01,180267
+"CH","Switzerland","Europe",2022 W02,183970
+"CH","Switzerland","Europe",2022 W03,233885
+"CH","Switzerland","Europe",2022 W04,248771
+"CH","Switzerland","Europe",2022 W05,205272
+"CH","Switzerland","Europe",2022 W06,154928
+"CH","Switzerland","Europe",2022 W07,112468
+"CH","Switzerland","Europe",2022 W08,103864
+"CH","Switzerland","Europe",2022 W09,146165
+"CY","Cyprus","Europe",2021 W49,3933
+"CY","Cyprus","Europe",2021 W50,4255
+"CY","Cyprus","Europe",2021 W51,5135
+"CY","Cyprus","Europe",2021 W52,17631
+"CY","Cyprus","Europe",2022 W01,25723
+"CY","Cyprus","Europe",2022 W02,22407
+"CY","Cyprus","Europe",2022 W03,15773
+"CY","Cyprus","Europe",2022 W04,16980
+"CY","Cyprus","Europe",2022 W05,20295
+"CY","Cyprus","Europe",2022 W06,18231
+"CY","Cyprus","Europe",2022 W07,16440
+"CY","Cyprus","Europe",2022 W08,14348
+"CY","Cyprus","Europe",2022 W09,13832
+"CZ","Czechia","Europe",2021 W49,93416
+"CZ","Czechia","Europe",2021 W50,68810
+"CZ","Czechia","Europe",2021 W51,42384
+"CZ","Czechia","Europe",2021 W52,35964
+"CZ","Czechia","Europe",2022 W01,46136
+"CZ","Czechia","Europe",2022 W02,68187
+"CZ","Czechia","Europe",2022 W03,154004
+"CZ","Czechia","Europe",2022 W04,238016
+"CZ","Czechia","Europe",2022 W05,244490
+"CZ","Czechia","Europe",2022 W06,161298
+"CZ","Czechia","Europe",2022 W07,109473
+"CZ","Czechia","Europe",2022 W08,67883
+"CZ","Czechia","Europe",2022 W09,54954
+"DE","Germany","Europe",2021 W49,351738
+"DE","Germany","Europe",2021 W50,283673
+"DE","Germany","Europe",2021 W51,197845
+"DE","Germany","Europe",2021 W52,197948
+"DE","Germany","Europe",2022 W01,321107
+"DE","Germany","Europe",2022 W02,455541
+"DE","Germany","Europe",2022 W03,715470
+"DE","Germany","Europe",2022 W04,1055768
+"DE","Germany","Europe",2022 W05,1285375
+"DE","Germany","Europe",2022 W06,1322071
+"DE","Germany","Europe",2022 W07,1218465
+"DE","Germany","Europe",2022 W08,1119632
+"DE","Germany","Europe",2022 W09,1108231
+"DJ","Djibouti","Eastern Mediterranean",2021 W49,6
+"DJ","Djibouti","Eastern Mediterranean",2021 W50,14
+"DJ","Djibouti","Eastern Mediterranean",2021 W51,40
+"DJ","Djibouti","Eastern Mediterranean",2021 W52,100
+"DJ","Djibouti","Eastern Mediterranean",2022 W01,416
+"DJ","Djibouti","Eastern Mediterranean",2022 W02,757
+"DJ","Djibouti","Eastern Mediterranean",2022 W03,430
+"DJ","Djibouti","Eastern Mediterranean",2022 W04,169
+"DJ","Djibouti","Eastern Mediterranean",2022 W05,70
+"DJ","Djibouti","Eastern Mediterranean",2022 W06,21
+"DJ","Djibouti","Eastern Mediterranean",2022 W07,10
+"DJ","Djibouti","Eastern Mediterranean",2022 W08,6
+"DJ","Djibouti","Eastern Mediterranean",2022 W09,3
+"DK","Denmark","Europe",2021 W49,46112
+"DK","Denmark","Europe",2021 W50,70209
+"DK","Denmark","Europe",2021 W51,79049
+"DK","Denmark","Europe",2021 W52,116331
+"DK","Denmark","Europe",2022 W01,123670
+"DK","Denmark","Europe",2022 W02,154800
+"DK","Denmark","Europe",2022 W03,250778
+"DK","Denmark","Europe",2022 W04,321474
+"DK","Denmark","Europe",2022 W05,289241
+"DK","Denmark","Europe",2022 W06,322546
+"DK","Denmark","Europe",2022 W07,263285
+"DK","Denmark","Europe",2022 W08,179445
+"DK","Denmark","Europe",2022 W09,121430
+"EE","Estonia","Europe",2021 W49,3286
+"EE","Estonia","Europe",2021 W50,3841
+"EE","Estonia","Europe",2021 W51,4443
+"EE","Estonia","Europe",2021 W52,5987
+"EE","Estonia","Europe",2022 W01,9967
+"EE","Estonia","Europe",2022 W02,14578
+"EE","Estonia","Europe",2022 W03,24331
+"EE","Estonia","Europe",2022 W04,41154
+"EE","Estonia","Europe",2022 W05,48366
+"EE","Estonia","Europe",2022 W06,39658
+"EE","Estonia","Europe",2022 W07,39143
+"EE","Estonia","Europe",2022 W08,32402
+"EE","Estonia","Europe",2022 W09,23559
+"EG","Egypt","Eastern Mediterranean",2021 W49,6075
+"EG","Egypt","Eastern Mediterranean",2021 W50,6076
+"EG","Egypt","Eastern Mediterranean",2021 W51,6109
+"EG","Egypt","Eastern Mediterranean",2021 W52,5838
+"EG","Egypt","Eastern Mediterranean",2022 W01,5587
+"EG","Egypt","Eastern Mediterranean",2022 W02,6934
+"EG","Egypt","Eastern Mediterranean",2022 W03,9616
+"EG","Egypt","Eastern Mediterranean",2022 W04,12983
+"EG","Egypt","Eastern Mediterranean",2022 W05,15872
+"EG","Egypt","Eastern Mediterranean",2022 W06,15471
+"EG","Egypt","Eastern Mediterranean",2022 W07,14627
+"EG","Egypt","Eastern Mediterranean",2022 W08,13279
+"EG","Egypt","Eastern Mediterranean",2022 W09,9149
+"ES","Spain","Europe",2021 W49,103819
+"ES","Spain","Europe",2021 W50,208214
+"ES","Spain","Europe",2021 W51,436636
+"ES","Spain","Europe",2021 W52,753330
+"ES","Spain","Europe",2022 W01,828557
+"ES","Spain","Europe",2022 W02,966446
+"ES","Spain","Europe",2022 W03,859525
+"ES","Spain","Europe",2022 W04,670947
+"ES","Spain","Europe",2022 W05,413608
+"ES","Spain","Europe",2022 W06,261688
+"ES","Spain","Europe",2022 W07,165173
+"ES","Spain","Europe",2022 W08,120505
+"ES","Spain","Europe",2022 W09,104590
+"FI","Finland","Europe",2021 W49,10378
+"FI","Finland","Europe",2021 W50,13340
+"FI","Finland","Europe",2021 W51,20355
+"FI","Finland","Europe",2021 W52,42419
+"FI","Finland","Europe",2022 W01,57097
+"FI","Finland","Europe",2022 W02,60311
+"FI","Finland","Europe",2022 W03,57447
+"FI","Finland","Europe",2022 W04,48545
+"FI","Finland","Europe",2022 W05,44233
+"FI","Finland","Europe",2022 W06,45302
+"FI","Finland","Europe",2022 W07,42650
+"FI","Finland","Europe",2022 W08,30125
+"FI","Finland","Europe",2022 W09,38439
+"FO","Faroe Islands","Europe",2021 W49,479
+"FO","Faroe Islands","Europe",2021 W50,363
+"FO","Faroe Islands","Europe",2021 W51,445
+"FO","Faroe Islands","Europe",2021 W52,936
+"FO","Faroe Islands","Europe",2022 W01,1473
+"FO","Faroe Islands","Europe",2022 W02,2210
+"FO","Faroe Islands","Europe",2022 W03,4062
+"FO","Faroe Islands","Europe",2022 W04,4791
+"FO","Faroe Islands","Europe",2022 W05,4973
+"FO","Faroe Islands","Europe",2022 W06,4835
+"FO","Faroe Islands","Europe",2022 W07,3454
+"FO","Faroe Islands","Europe",2022 W08,2254
+"FO","Faroe Islands","Europe",2022 W09,1213.33333333333
+"FR","France","Europe",2021 W49,335972
+"FR","France","Europe",2021 W50,358175
+"FR","France","Europe",2021 W51,504469
+"FR","France","Europe",2021 W52,1093162
+"FR","France","Europe",2022 W01,1596576
+"FR","France","Europe",2022 W02,2013011
+"FR","France","Europe",2022 W03,2427055
+"FR","France","Europe",2022 W04,2342970
+"FR","France","Europe",2022 W05,1729412
+"FR","France","Europe",2022 W06,973502
+"FR","France","Europe",2022 W07,573740
+"FR","France","Europe",2022 W08,398857
+"FR","France","Europe",2022 W09,350033
+"GB","The United Kingdom","Europe",2021 W49,364005
+"GB","The United Kingdom","Europe",2021 W50,606183
+"GB","The United Kingdom","Europe",2021 W51,921165
+"GB","The United Kingdom","Europe",2021 W52,1291705
+"GB","The United Kingdom","Europe",2022 W01,1319446
+"GB","The United Kingdom","Europe",2022 W02,722706
+"GB","The United Kingdom","Europe",2022 W03,729235
+"GB","The United Kingdom","Europe",2022 W04,713024
+"GB","The United Kingdom","Europe",2022 W05,587422
+"GB","The United Kingdom","Europe",2022 W06,418361
+"GB","The United Kingdom","Europe",2022 W07,315018
+"GB","The United Kingdom","Europe",2022 W08,250764
+"GB","The United Kingdom","Europe",2022 W09,276478
+"GE","Georgia","Europe",2021 W49,23993
+"GE","Georgia","Europe",2021 W50,19874
+"GE","Georgia","Europe",2021 W51,15208
+"GE","Georgia","Europe",2021 W52,13272
+"GE","Georgia","Europe",2022 W01,22234
+"GE","Georgia","Europe",2022 W02,35813
+"GE","Georgia","Europe",2022 W03,55758
+"GE","Georgia","Europe",2022 W04,111328
+"GE","Georgia","Europe",2022 W05,151830
+"GE","Georgia","Europe",2022 W06,139462
+"GE","Georgia","Europe",2022 W07,94828
+"GE","Georgia","Europe",2022 W08,54114
+"GE","Georgia","Europe",2022 W09,22365
+"GR","Greece","Europe",2021 W49,36957
+"GR","Greece","Europe",2021 W50,31587
+"GR","Greece","Europe",2021 W51,39594
+"GR","Greece","Europe",2021 W52,170029
+"GR","Greece","Europe",2022 W01,248168
+"GR","Greece","Europe",2022 W02,161058
+"GR","Greece","Europe",2022 W03,131115
+"GR","Greece","Europe",2022 W04,128677
+"GR","Greece","Europe",2022 W05,126989
+"GR","Greece","Europe",2022 W06,126371
+"GR","Greece","Europe",2022 W07,126090
+"GR","Greece","Europe",2022 W08,107857
+"GR","Greece","Europe",2022 W09,102072
+"HR","Croatia","Europe",2021 W49,23622
+"HR","Croatia","Europe",2021 W50,21564
+"HR","Croatia","Europe",2021 W51,19675
+"HR","Croatia","Europe",2021 W52,27436
+"HR","Croatia","Europe",2022 W01,37734
+"HR","Croatia","Europe",2022 W02,53431
+"HR","Croatia","Europe",2022 W03,58262
+"HR","Croatia","Europe",2022 W04,59537
+"HR","Croatia","Europe",2022 W05,49498
+"HR","Croatia","Europe",2022 W06,33703
+"HR","Croatia","Europe",2022 W07,26454
+"HR","Croatia","Europe",2022 W08,14411
+"HR","Croatia","Europe",2022 W09,9385
+"ID","Indonesia","South-East Asia",2021 W49,1458
+"ID","Indonesia","South-East Asia",2021 W50,1401
+"ID","Indonesia","South-East Asia",2021 W51,1215
+"ID","Indonesia","South-East Asia",2021 W52,1409
+"ID","Indonesia","South-East Asia",2022 W01,3027
+"ID","Indonesia","South-East Asia",2022 W02,5454
+"ID","Indonesia","South-East Asia",2022 W03,14729
+"ID","Indonesia","South-East Asia",2022 W04,56807
+"ID","Indonesia","South-East Asia",2022 W05,173295
+"ID","Indonesia","South-East Asia",2022 W06,291298
+"ID","Indonesia","South-East Asia",2022 W07,389727
+"ID","Indonesia","South-East Asia",2022 W08,341889
+"ID","Indonesia","South-East Asia",2022 W09,209331
+"IE","Ireland","Europe",2021 W49,29900
+"IE","Ireland","Europe",2021 W50,32523
+"IE","Ireland","Europe",2021 W51,42410
+"IE","Ireland","Europe",2021 W52,57685
+"IE","Ireland","Europe",2022 W01,87860
+"IE","Ireland","Europe",2022 W02,91539
+"IE","Ireland","Europe",2022 W03,96655
+"IE","Ireland","Europe",2022 W04,120085
+"IE","Ireland","Europe",2022 W05,54391
+"IE","Ireland","Europe",2022 W06,35721
+"IE","Ireland","Europe",2022 W07,31940
+"IE","Ireland","Europe",2022 W08,25998
+"IE","Ireland","Europe",2022 W09,23236
+"IL","Israel","Europe",2021 W49,4295
+"IL","Israel","Europe",2021 W50,4886
+"IL","Israel","Europe",2021 W51,9076
+"IL","Israel","Europe",2021 W52,26892
+"IL","Israel","Europe",2022 W01,112751
+"IL","Israel","Europe",2022 W02,308686
+"IL","Israel","Europe",2022 W03,494270
+"IL","Israel","Europe",2022 W04,474063
+"IL","Israel","Europe",2022 W05,382505
+"IL","Israel","Europe",2022 W06,240931
+"IL","Israel","Europe",2022 W07,135476
+"IL","Israel","Europe",2022 W08,77753
+"IL","Israel","Europe",2022 W09,52910
+"IM","Isle of Man","Europe",2021 W49,651
+"IM","Isle of Man","Europe",2021 W50,514
+"IM","Isle of Man","Europe",2021 W51,874
+"IM","Isle of Man","Europe",2021 W52,2394
+"IM","Isle of Man","Europe",2022 W01,2474
+"IM","Isle of Man","Europe",2022 W02,1156
+"IM","Isle of Man","Europe",2022 W03,785
+"IM","Isle of Man","Europe",2022 W04,611
+"IM","Isle of Man","Europe",2022 W05,465
+"IM","Isle of Man","Europe",2022 W06,258
+"IM","Isle of Man","Europe",2022 W07,245
+"IM","Isle of Man","Europe",2022 W08,376
+"IM","Isle of Man","Europe",2022 W09,736
+"IN","India","South-East Asia",2021 W49,57255
+"IN","India","South-East Asia",2021 W50,49765
+"IN","India","South-East Asia",2021 W51,46527
+"IN","India","South-East Asia",2021 W52,102330
+"IN","India","South-East Asia",2022 W01,638872
+"IN","India","South-East Asia",2022 W02,1594160
+"IN","India","South-East Asia",2022 W03,2115100
+"IN","India","South-East Asia",2022 W04,1855258
+"IN","India","South-East Asia",2022 W05,1095616
+"IN","India","South-East Asia",2022 W06,443283
+"IN","India","South-East Asia",2022 W07,191052
+"IN","India","South-East Asia",2022 W08,93644
+"IN","India","South-East Asia",2022 W09,46836
+"IQ","Iraq","Eastern Mediterranean",2021 W49,3608
+"IQ","Iraq","Eastern Mediterranean",2021 W50,2711
+"IQ","Iraq","Eastern Mediterranean",2021 W51,2104
+"IQ","Iraq","Eastern Mediterranean",2021 W52,1579
+"IQ","Iraq","Eastern Mediterranean",2022 W01,2915
+"IQ","Iraq","Eastern Mediterranean",2022 W02,13877
+"IQ","Iraq","Eastern Mediterranean",2022 W03,38623
+"IQ","Iraq","Eastern Mediterranean",2022 W04,48477
+"IQ","Iraq","Eastern Mediterranean",2022 W05,46827
+"IQ","Iraq","Eastern Mediterranean",2022 W06,28925
+"IQ","Iraq","Eastern Mediterranean",2022 W07,16476
+"IQ","Iraq","Eastern Mediterranean",2022 W08,10634
+"IQ","Iraq","Eastern Mediterranean",2022 W09,6910
+"IR","Iran (Islamic Republic of)","Eastern Mediterranean",2021 W49,21168
+"IR","Iran (Islamic Republic of)","Eastern Mediterranean",2021 W50,16487
+"IR","Iran (Islamic Republic of)","Eastern Mediterranean",2021 W51,13894
+"IR","Iran (Islamic Republic of)","Eastern Mediterranean",2021 W52,12498
+"IR","Iran (Islamic Republic of)","Eastern Mediterranean",2022 W01,9114
+"IR","Iran (Islamic Republic of)","Eastern Mediterranean",2022 W02,14224
+"IR","Iran (Islamic Republic of)","Eastern Mediterranean",2022 W03,26605
+"IR","Iran (Islamic Republic of)","Eastern Mediterranean",2022 W04,76837
+"IR","Iran (Islamic Republic of)","Eastern Mediterranean",2022 W05,221654
+"IR","Iran (Islamic Republic of)","Eastern Mediterranean",2022 W06,236616
+"IR","Iran (Islamic Republic of)","Eastern Mediterranean",2022 W07,145032
+"IR","Iran (Islamic Republic of)","Eastern Mediterranean",2022 W08,105458
+"IR","Iran (Islamic Republic of)","Eastern Mediterranean",2022 W09,53363
+"IS","Iceland","Europe",2021 W49,865
+"IS","Iceland","Europe",2021 W50,1141
+"IS","Iceland","Europe",2021 W51,2579
+"IS","Iceland","Europe",2021 W52,6460
+"IS","Iceland","Europe",2022 W01,8200
+"IS","Iceland","Europe",2022 W02,8256
+"IS","Iceland","Europe",2022 W03,9656
+"IS","Iceland","Europe",2022 W04,10108
+"IS","Iceland","Europe",2022 W05,9277
+"IS","Iceland","Europe",2022 W06,12709
+"IS","Iceland","Europe",2022 W07,16727
+"IS","Iceland","Europe",2022 W08,23041
+"IS","Iceland","Europe",2022 W09,15678
+"IT","Italy","Europe",2021 W49,112233
+"IT","Italy","Europe",2021 W50,158547
+"IT","Italy","Europe",2021 W51,257579
+"IT","Italy","Europe",2021 W52,644604
+"IT","Italy","Europe",2022 W01,1014262
+"IT","Italy","Europe",2022 W02,1268153
+"IT","Italy","Europe",2022 W03,1231741
+"IT","Italy","Europe",2022 W04,1040184
+"IT","Italy","Europe",2022 W05,721418
+"IT","Italy","Europe",2022 W06,510537
+"IT","Italy","Europe",2022 W07,374443
+"IT","Italy","Europe",2022 W08,304907
+"IT","Italy","Europe",2022 W09,257543
+"JE","Jersey","Europe",2021 W49,792
+"JE","Jersey","Europe",2021 W50,787
+"JE","Jersey","Europe",2021 W51,1186
+"JE","Jersey","Europe",2021 W52,2339
+"JE","Jersey","Europe",2022 W01,3587
+"JE","Jersey","Europe",2022 W02,2570
+"JE","Jersey","Europe",2022 W03,1991
+"JE","Jersey","Europe",2022 W04,2336
+"JE","Jersey","Europe",2022 W05,2129
+"JE","Jersey","Europe",2022 W06,1830
+"JE","Jersey","Europe",2022 W07,1480
+"JE","Jersey","Europe",2022 W08,1435
+"JE","Jersey","Europe",2022 W09,1937
+"JO","Jordan","Eastern Mediterranean",2021 W49,34735
+"JO","Jordan","Eastern Mediterranean",2021 W50,27333
+"JO","Jordan","Eastern Mediterranean",2021 W51,17952
+"JO","Jordan","Eastern Mediterranean",2021 W52,12856
+"JO","Jordan","Eastern Mediterranean",2022 W01,13155
+"JO","Jordan","Eastern Mediterranean",2022 W02,20042
+"JO","Jordan","Eastern Mediterranean",2022 W03,36623
+"JO","Jordan","Eastern Mediterranean",2022 W04,63153
+"JO","Jordan","Eastern Mediterranean",2022 W05,116993
+"JO","Jordan","Eastern Mediterranean",2022 W06,136567
+"JO","Jordan","Eastern Mediterranean",2022 W07,110012
+"JO","Jordan","Eastern Mediterranean",2022 W08,56356
+"JO","Jordan","Eastern Mediterranean",2022 W09,49116.6666666667
+"KG","Kyrgyzstan","Europe",2021 W49,350
+"KG","Kyrgyzstan","Europe",2021 W50,230
+"KG","Kyrgyzstan","Europe",2021 W51,282
+"KG","Kyrgyzstan","Europe",2021 W52,309
+"KG","Kyrgyzstan","Europe",2022 W01,1081
+"KG","Kyrgyzstan","Europe",2022 W02,3820
+"KG","Kyrgyzstan","Europe",2022 W03,5707
+"KG","Kyrgyzstan","Europe",2022 W04,2717
+"KG","Kyrgyzstan","Europe",2022 W05,1325
+"KG","Kyrgyzstan","Europe",2022 W06,584
+"KG","Kyrgyzstan","Europe",2022 W07,302
+"KG","Kyrgyzstan","Europe",2022 W08,156
+"KG","Kyrgyzstan","Europe",2022 W09,153
+"KP","Democratic People's Republic of Korea","South-East Asia",2021 W49,0
+"KP","Democratic People's Republic of Korea","South-East Asia",2021 W50,0
+"KP","Democratic People's Republic of Korea","South-East Asia",2021 W51,0
+"KP","Democratic People's Republic of Korea","South-East Asia",2021 W52,0
+"KP","Democratic People's Republic of Korea","South-East Asia",2022 W01,0
+"KP","Democratic People's Republic of Korea","South-East Asia",2022 W02,0
+"KP","Democratic People's Republic of Korea","South-East Asia",2022 W03,0
+"KP","Democratic People's Republic of Korea","South-East Asia",2022 W04,0
+"KP","Democratic People's Republic of Korea","South-East Asia",2022 W05,0
+"KP","Democratic People's Republic of Korea","South-East Asia",2022 W06,0
+"KP","Democratic People's Republic of Korea","South-East Asia",2022 W07,0
+"KP","Democratic People's Republic of Korea","South-East Asia",2022 W08,0
+"KP","Democratic People's Republic of Korea","South-East Asia",2022 W09,0
+"KW","Kuwait","Eastern Mediterranean",2021 W49,208
+"KW","Kuwait","Eastern Mediterranean",2021 W50,351
+"KW","Kuwait","Eastern Mediterranean",2021 W51,1036
+"KW","Kuwait","Eastern Mediterranean",2021 W52,2812
+"KW","Kuwait","Eastern Mediterranean",2022 W01,13197
+"KW","Kuwait","Eastern Mediterranean",2022 W02,29908
+"KW","Kuwait","Eastern Mediterranean",2022 W03,32279
+"KW","Kuwait","Eastern Mediterranean",2022 W04,40955
+"KW","Kuwait","Eastern Mediterranean",2022 W05,40525
+"KW","Kuwait","Eastern Mediterranean",2022 W06,24452
+"KW","Kuwait","Eastern Mediterranean",2022 W07,12781
+"KW","Kuwait","Eastern Mediterranean",2022 W08,6883
+"KW","Kuwait","Eastern Mediterranean",2022 W09,3786
+"KZ","Kazakhstan","Europe",2021 W49,4793
+"KZ","Kazakhstan","Europe",2021 W50,3649
+"KZ","Kazakhstan","Europe",2021 W51,3317
+"KZ","Kazakhstan","Europe",2021 W52,3135
+"KZ","Kazakhstan","Europe",2022 W01,6672
+"KZ","Kazakhstan","Europe",2022 W02,54927
+"KZ","Kazakhstan","Europe",2022 W03,97258
+"KZ","Kazakhstan","Europe",2022 W04,80452
+"KZ","Kazakhstan","Europe",2022 W05,45666
+"KZ","Kazakhstan","Europe",2022 W06,19486
+"KZ","Kazakhstan","Europe",2022 W07,8870
+"KZ","Kazakhstan","Europe",2022 W08,3843
+"KZ","Kazakhstan","Europe",2022 W09,1838
+"LB","Lebanon","Eastern Mediterranean",2021 W49,11341
+"LB","Lebanon","Eastern Mediterranean",2021 W50,10949
+"LB","Lebanon","Eastern Mediterranean",2021 W51,11795
+"LB","Lebanon","Eastern Mediterranean",2021 W52,20029
+"LB","Lebanon","Eastern Mediterranean",2022 W01,38112
+"LB","Lebanon","Eastern Mediterranean",2022 W02,45231
+"LB","Lebanon","Eastern Mediterranean",2022 W03,44217
+"LB","Lebanon","Eastern Mediterranean",2022 W04,48976
+"LB","Lebanon","Eastern Mediterranean",2022 W05,57803
+"LB","Lebanon","Eastern Mediterranean",2022 W06,46417
+"LB","Lebanon","Eastern Mediterranean",2022 W07,30984
+"LB","Lebanon","Eastern Mediterranean",2022 W08,22279
+"LB","Lebanon","Eastern Mediterranean",2022 W09,11935
+"LI","Liechtenstein","Europe",2021 W49,375
+"LI","Liechtenstein","Europe",2021 W50,304
+"LI","Liechtenstein","Europe",2021 W51,268
+"LI","Liechtenstein","Europe",2021 W52,291
+"LI","Liechtenstein","Europe",2022 W01,481
+"LI","Liechtenstein","Europe",2022 W02,544
+"LI","Liechtenstein","Europe",2022 W03,757
+"LI","Liechtenstein","Europe",2022 W04,910
+"LI","Liechtenstein","Europe",2022 W05,810
+"LI","Liechtenstein","Europe",2022 W06,846
+"LI","Liechtenstein","Europe",2022 W07,615
+"LI","Liechtenstein","Europe",2022 W08,648
+"LI","Liechtenstein","Europe",2022 W09,1143
+"LK","Sri Lanka","South-East Asia",2021 W49,5220
+"LK","Sri Lanka","South-East Asia",2021 W50,6783
+"LK","Sri Lanka","South-East Asia",2021 W51,3964
+"LK","Sri Lanka","South-East Asia",2021 W52,4286
+"LK","Sri Lanka","South-East Asia",2022 W01,3732
+"LK","Sri Lanka","South-East Asia",2022 W02,4680
+"LK","Sri Lanka","South-East Asia",2022 W03,5539
+"LK","Sri Lanka","South-East Asia",2022 W04,8217
+"LK","Sri Lanka","South-East Asia",2022 W05,8417
+"LK","Sri Lanka","South-East Asia",2022 W06,9596
+"LK","Sri Lanka","South-East Asia",2022 W07,8721
+"LK","Sri Lanka","South-East Asia",2022 W08,8200
+"LK","Sri Lanka","South-East Asia",2022 W09,5103
+"LT","Lithuania","Europe",2021 W49,11299
+"LT","Lithuania","Europe",2021 W50,11217
+"LT","Lithuania","Europe",2021 W51,9266
+"LT","Lithuania","Europe",2021 W52,11309
+"LT","Lithuania","Europe",2022 W01,19644
+"LT","Lithuania","Europe",2022 W02,25271
+"LT","Lithuania","Europe",2022 W03,40673
+"LT","Lithuania","Europe",2022 W04,64817
+"LT","Lithuania","Europe",2022 W05,76023
+"LT","Lithuania","Europe",2022 W06,66431
+"LT","Lithuania","Europe",2022 W07,46177
+"LT","Lithuania","Europe",2022 W08,38565
+"LT","Lithuania","Europe",2022 W09,31556
+"LU","Luxembourg","Europe",2021 W49,2611
+"LU","Luxembourg","Europe",2021 W50,2682
+"LU","Luxembourg","Europe",2021 W51,3021
+"LU","Luxembourg","Europe",2021 W52,5459
+"LU","Luxembourg","Europe",2022 W01,9032
+"LU","Luxembourg","Europe",2022 W02,11571
+"LU","Luxembourg","Europe",2022 W03,14444
+"LU","Luxembourg","Europe",2022 W04,15542
+"LU","Luxembourg","Europe",2022 W05,11979
+"LU","Luxembourg","Europe",2022 W06,6584
+"LU","Luxembourg","Europe",2022 W07,3713
+"LU","Luxembourg","Europe",2022 W08,4735
+"LU","Luxembourg","Europe",2022 W09,4643
+"LV","Latvia","Europe",2021 W49,4611
+"LV","Latvia","Europe",2021 W50,5253
+"LV","Latvia","Europe",2021 W51,4512
+"LV","Latvia","Europe",2021 W52,5613
+"LV","Latvia","Europe",2022 W01,10000
+"LV","Latvia","Europe",2022 W02,14813
+"LV","Latvia","Europe",2022 W03,27915
+"LV","Latvia","Europe",2022 W04,52560
+"LV","Latvia","Europe",2022 W05,60742
+"LV","Latvia","Europe",2022 W06,67962
+"LV","Latvia","Europe",2022 W07,68335
+"LV","Latvia","Europe",2022 W08,64909
+"LV","Latvia","Europe",2022 W09,53471
+"MA","Morocco","Eastern Mediterranean",2021 W49,879
+"MA","Morocco","Eastern Mediterranean",2021 W50,1248
+"MA","Morocco","Eastern Mediterranean",2021 W51,2959
+"MA","Morocco","Eastern Mediterranean",2021 W52,9833
+"MA","Morocco","Eastern Mediterranean",2022 W01,31701
+"MA","Morocco","Eastern Mediterranean",2022 W02,46104
+"MA","Morocco","Eastern Mediterranean",2022 W03,50753
+"MA","Morocco","Eastern Mediterranean",2022 W04,35162
+"MA","Morocco","Eastern Mediterranean",2022 W05,16901
+"MA","Morocco","Eastern Mediterranean",2022 W06,8490
+"MA","Morocco","Eastern Mediterranean",2022 W07,4138
+"MA","Morocco","Eastern Mediterranean",2022 W08,2081
+"MA","Morocco","Eastern Mediterranean",2022 W09,836
+"MC","Monaco","Europe",2021 W49,214
+"MC","Monaco","Europe",2021 W50,294
+"MC","Monaco","Europe",2021 W51,364
+"MC","Monaco","Europe",2021 W52,460
+"MC","Monaco","Europe",2022 W01,645
+"MC","Monaco","Europe",2022 W02,755
+"MC","Monaco","Europe",2022 W03,841
+"MC","Monaco","Europe",2022 W04,812
+"MC","Monaco","Europe",2022 W05,498
+"MC","Monaco","Europe",2022 W06,259
+"MC","Monaco","Europe",2022 W07,166
+"MC","Monaco","Europe",2022 W08,189
+"MC","Monaco","Europe",2022 W09,162
+"MD","Republic of Moldova","Europe",2021 W49,3240
+"MD","Republic of Moldova","Europe",2021 W50,2752
+"MD","Republic of Moldova","Europe",2021 W51,2195
+"MD","Republic of Moldova","Europe",2021 W52,2085
+"MD","Republic of Moldova","Europe",2022 W01,3467
+"MD","Republic of Moldova","Europe",2022 W02,8019
+"MD","Republic of Moldova","Europe",2022 W03,19083
+"MD","Republic of Moldova","Europe",2022 W04,31246
+"MD","Republic of Moldova","Europe",2022 W05,29022
+"MD","Republic of Moldova","Europe",2022 W06,17245
+"MD","Republic of Moldova","Europe",2022 W07,10668
+"MD","Republic of Moldova","Europe",2022 W08,6128
+"MD","Republic of Moldova","Europe",2022 W09,4081
+"ME","Montenegro","Europe",2021 W49,1384
+"ME","Montenegro","Europe",2021 W50,1169
+"ME","Montenegro","Europe",2021 W51,2007
+"ME","Montenegro","Europe",2021 W52,9108
+"ME","Montenegro","Europe",2022 W01,16085
+"ME","Montenegro","Europe",2022 W02,14484
+"ME","Montenegro","Europe",2022 W03,9715
+"ME","Montenegro","Europe",2022 W04,6433
+"ME","Montenegro","Europe",2022 W05,4335
+"ME","Montenegro","Europe",2022 W06,3143
+"ME","Montenegro","Europe",2022 W07,2399
+"ME","Montenegro","Europe",2022 W08,1468
+"ME","Montenegro","Europe",2022 W09,859
+"MK","North Macedonia","Europe",2021 W49,2076
+"MK","North Macedonia","Europe",2021 W50,1996
+"MK","North Macedonia","Europe",2021 W51,1838
+"MK","North Macedonia","Europe",2021 W52,2543
+"MK","North Macedonia","Europe",2022 W01,6584
+"MK","North Macedonia","Europe",2022 W02,11216
+"MK","North Macedonia","Europe",2022 W03,11573
+"MK","North Macedonia","Europe",2022 W04,12077
+"MK","North Macedonia","Europe",2022 W05,10167
+"MK","North Macedonia","Europe",2022 W06,8960
+"MK","North Macedonia","Europe",2022 W07,6604
+"MK","North Macedonia","Europe",2022 W08,4045
+"MK","North Macedonia","Europe",2022 W09,2716
+"MM","Myanmar","South-East Asia",2021 W49,2254
+"MM","Myanmar","South-East Asia",2021 W50,1592
+"MM","Myanmar","South-East Asia",2021 W51,1360
+"MM","Myanmar","South-East Asia",2021 W52,1412
+"MM","Myanmar","South-East Asia",2022 W01,1037
+"MM","Myanmar","South-East Asia",2022 W02,1082
+"MM","Myanmar","South-East Asia",2022 W03,927
+"MM","Myanmar","South-East Asia",2022 W04,1183
+"MM","Myanmar","South-East Asia",2022 W05,2647
+"MM","Myanmar","South-East Asia",2022 W06,8870
+"MM","Myanmar","South-East Asia",2022 W07,18896
+"MM","Myanmar","South-East Asia",2022 W08,20531
+"MM","Myanmar","South-East Asia",2022 W09,12248
+"MT","Malta","Europe",2021 W49,603
+"MT","Malta","Europe",2021 W50,1103
+"MT","Malta","Europe",2021 W51,4107
+"MT","Malta","Europe",2021 W52,7825
+"MT","Malta","Europe",2022 W01,6320
+"MT","Malta","Europe",2022 W02,3586
+"MT","Malta","Europe",2022 W03,2187
+"MT","Malta","Europe",2022 W04,1761
+"MT","Malta","Europe",2022 W05,1485
+"MT","Malta","Europe",2022 W06,1059
+"MT","Malta","Europe",2022 W07,687
+"MT","Malta","Europe",2022 W08,591
+"MT","Malta","Europe",2022 W09,621
+"MV","Maldives","South-East Asia",2021 W49,908
+"MV","Maldives","South-East Asia",2021 W50,838
+"MV","Maldives","South-East Asia",2021 W51,907
+"MV","Maldives","South-East Asia",2021 W52,1188
+"MV","Maldives","South-East Asia",2022 W01,2000
+"MV","Maldives","South-East Asia",2022 W02,5529
+"MV","Maldives","South-East Asia",2022 W03,13880
+"MV","Maldives","South-East Asia",2022 W04,18665
+"MV","Maldives","South-East Asia",2022 W05,14211
+"MV","Maldives","South-East Asia",2022 W06,8724
+"MV","Maldives","South-East Asia",2022 W07,6012
+"MV","Maldives","South-East Asia",2022 W08,4559
+"MV","Maldives","South-East Asia",2022 W09,2944
+"NL","Netherlands","Europe",2021 W49,134945
+"NL","Netherlands","Europe",2021 W50,103030
+"NL","Netherlands","Europe",2021 W51,86523
+"NL","Netherlands","Europe",2021 W52,95172
+"NL","Netherlands","Europe",2022 W01,161902
+"NL","Netherlands","Europe",2022 W02,220806
+"NL","Netherlands","Europe",2022 W03,289635
+"NL","Netherlands","Europe",2022 W04,416151
+"NL","Netherlands","Europe",2022 W05,561907
+"NL","Netherlands","Europe",2022 W06,876332
+"NL","Netherlands","Europe",2022 W07,371348
+"NL","Netherlands","Europe",2022 W08,259784
+"NL","Netherlands","Europe",2022 W09,335285
+"NO","Norway","Europe",2021 W49,33843
+"NO","Norway","Europe",2021 W50,31731
+"NO","Norway","Europe",2021 W51,22992
+"NO","Norway","Europe",2021 W52,25029
+"NO","Norway","Europe",2022 W01,45255
+"NO","Norway","Europe",2022 W02,69289
+"NO","Norway","Europe",2022 W03,115235
+"NO","Norway","Europe",2022 W04,136765
+"NO","Norway","Europe",2022 W05,129137
+"NO","Norway","Europe",2022 W06,141735
+"NO","Norway","Europe",2022 W07,101127
+"NO","Norway","Europe",2022 W08,102236
+"NO","Norway","Europe",2022 W09,68092
+"NP","Nepal","South-East Asia",2021 W49,1630
+"NP","Nepal","South-East Asia",2021 W50,1514
+"NP","Nepal","South-East Asia",2021 W51,1535
+"NP","Nepal","South-East Asia",2021 W52,1715
+"NP","Nepal","South-East Asia",2022 W01,3603
+"NP","Nepal","South-East Asia",2022 W02,21149
+"NP","Nepal","South-East Asia",2022 W03,56656
+"NP","Nepal","South-East Asia",2022 W04,40047
+"NP","Nepal","South-East Asia",2022 W05,15964
+"NP","Nepal","South-East Asia",2022 W06,6654
+"NP","Nepal","South-East Asia",2022 W07,2500
+"NP","Nepal","South-East Asia",2022 W08,1306
+"NP","Nepal","South-East Asia",2022 W09,636
+"PK","Pakistan","Eastern Mediterranean",2021 W49,2308
+"PK","Pakistan","Eastern Mediterranean",2021 W50,2087
+"PK","Pakistan","Eastern Mediterranean",2021 W51,2233
+"PK","Pakistan","Eastern Mediterranean",2021 W52,2852
+"PK","Pakistan","Eastern Mediterranean",2022 W01,6553
+"PK","Pakistan","Eastern Mediterranean",2022 W02,17634
+"PK","Pakistan","Eastern Mediterranean",2022 W03,39899
+"PK","Pakistan","Eastern Mediterranean",2022 W04,50014
+"PK","Pakistan","Eastern Mediterranean",2022 W05,44866
+"PK","Pakistan","Eastern Mediterranean",2022 W06,25693
+"PK","Pakistan","Eastern Mediterranean",2022 W07,18084
+"PK","Pakistan","Eastern Mediterranean",2022 W08,8981
+"PK","Pakistan","Eastern Mediterranean",2022 W09,5846
+"PL","Poland","Europe",2021 W49,156823
+"PL","Poland","Europe",2021 W50,130602
+"PL","Poland","Europe",2021 W51,91024
+"PL","Poland","Europe",2021 W52,77580
+"PL","Poland","Europe",2022 W01,85772
+"PL","Poland","Europe",2022 W02,99852
+"PL","Poland","Europe",2022 W03,205147
+"PL","Poland","Europe",2022 W04,334382
+"PL","Poland","Europe",2022 W05,311108
+"PL","Poland","Europe",2022 W06,243882
+"PL","Poland","Europe",2022 W07,146287
+"PL","Poland","Europe",2022 W08,106652
+"PL","Poland","Europe",2022 W09,81244
+"PS","occupied Palestinian territory, including east Jerusalem","Eastern Mediterranean",2021 W49,2092
+"PS","occupied Palestinian territory, including east Jerusalem","Eastern Mediterranean",2021 W50,2291
+"PS","occupied Palestinian territory, including east Jerusalem","Eastern Mediterranean",2021 W51,2116
+"PS","occupied Palestinian territory, including east Jerusalem","Eastern Mediterranean",2021 W52,2215
+"PS","occupied Palestinian territory, including east Jerusalem","Eastern Mediterranean",2022 W01,1988
+"PS","occupied Palestinian territory, including east Jerusalem","Eastern Mediterranean",2022 W02,3040
+"PS","occupied Palestinian territory, including east Jerusalem","Eastern Mediterranean",2022 W03,7293
+"PS","occupied Palestinian territory, including east Jerusalem","Eastern Mediterranean",2022 W04,33080
+"PS","occupied Palestinian territory, including east Jerusalem","Eastern Mediterranean",2022 W05,58046
+"PS","occupied Palestinian territory, including east Jerusalem","Eastern Mediterranean",2022 W06,37153
+"PS","occupied Palestinian territory, including east Jerusalem","Eastern Mediterranean",2022 W07,20498
+"PS","occupied Palestinian territory, including east Jerusalem","Eastern Mediterranean",2022 W08,12881
+"PS","occupied Palestinian territory, including east Jerusalem","Eastern Mediterranean",2022 W09,6488
+"PT","Portugal","Europe",2021 W49,27408
+"PT","Portugal","Europe",2021 W50,30427
+"PT","Portugal","Europe",2021 W51,55217
+"PT","Portugal","Europe",2021 W52,136883
+"PT","Portugal","Europe",2022 W01,200491
+"PT","Portugal","Europe",2022 W02,239276
+"PT","Portugal","Europe",2022 W03,323553
+"PT","Portugal","Europe",2022 W04,390295
+"PT","Portugal","Europe",2022 W05,317989
+"PT","Portugal","Europe",2022 W06,184588
+"PT","Portugal","Europe",2022 W07,108901
+"PT","Portugal","Europe",2022 W08,73273
+"PT","Portugal","Europe",2022 W09,70832
+"QA","Qatar","Eastern Mediterranean",2021 W49,1117
+"QA","Qatar","Eastern Mediterranean",2021 W50,1179
+"QA","Qatar","Eastern Mediterranean",2021 W51,1429
+"QA","Qatar","Eastern Mediterranean",2021 W52,3565
+"QA","Qatar","Eastern Mediterranean",2022 W01,15601
+"QA","Qatar","Eastern Mediterranean",2022 W02,28259
+"QA","Qatar","Eastern Mediterranean",2022 W03,25143
+"QA","Qatar","Eastern Mediterranean",2022 W04,15717
+"QA","Qatar","Eastern Mediterranean",2022 W05,8630
+"QA","Qatar","Eastern Mediterranean",2022 W06,5477
+"QA","Qatar","Eastern Mediterranean",2022 W07,3592
+"QA","Qatar","Eastern Mediterranean",2022 W08,2583
+"QA","Qatar","Eastern Mediterranean",2022 W09,1720
+"RO","Romania","Europe",2021 W49,7313
+"RO","Romania","Europe",2021 W50,5273
+"RO","Romania","Europe",2021 W51,4690
+"RO","Romania","Europe",2021 W52,7946
+"RO","Romania","Europe",2022 W01,29483
+"RO","Romania","Europe",2022 W02,56008
+"RO","Romania","Europe",2022 W03,107208
+"RO","Romania","Europe",2022 W04,173685
+"RO","Romania","Europe",2022 W05,208987
+"RO","Romania","Europe",2022 W06,164635
+"RO","Romania","Europe",2022 W07,105585
+"RO","Romania","Europe",2022 W08,68547
+"RO","Romania","Europe",2022 W09,40689
+"RS","Serbia","Europe",2021 W49,10684
+"RS","Serbia","Europe",2021 W50,8556
+"RS","Serbia","Europe",2021 W51,7834
+"RS","Serbia","Europe",2021 W52,11456
+"RS","Serbia","Europe",2022 W01,41697
+"RS","Serbia","Europe",2022 W02,82501
+"RS","Serbia","Europe",2022 W03,107594
+"RS","Serbia","Europe",2022 W04,116552
+"RS","Serbia","Europe",2022 W05,108448
+"RS","Serbia","Europe",2022 W06,77233
+"RS","Serbia","Europe",2022 W07,44263
+"RS","Serbia","Europe",2022 W08,26905
+"RS","Serbia","Europe",2022 W09,17835
+"RU","Russian Federation","Europe",2021 W49,215283
+"RU","Russian Federation","Europe",2021 W50,197894
+"RU","Russian Federation","Europe",2021 W51,177230
+"RU","Russian Federation","Europe",2021 W52,145946
+"RU","Russian Federation","Europe",2022 W01,112883
+"RU","Russian Federation","Europe",2022 W02,152685
+"RU","Russian Federation","Europe",2022 W03,304657
+"RU","Russian Federation","Europe",2022 W04,628816
+"RU","Russian Federation","Europe",2022 W05,1073111
+"RU","Russian Federation","Europe",2022 W06,1323391
+"RU","Russian Federation","Europe",2022 W07,1236910
+"RU","Russian Federation","Europe",2022 W08,920697
+"RU","Russian Federation","Europe",2022 W09,650540
+"SA","Saudi Arabia","Eastern Mediterranean",2021 W49,312
+"SA","Saudi Arabia","Eastern Mediterranean",2021 W50,549
+"SA","Saudi Arabia","Eastern Mediterranean",2021 W51,1668
+"SA","Saudi Arabia","Eastern Mediterranean",2021 W52,4676
+"SA","Saudi Arabia","Eastern Mediterranean",2022 W01,18211
+"SA","Saudi Arabia","Eastern Mediterranean",2022 W02,34660
+"SA","Saudi Arabia","Eastern Mediterranean",2022 W03,37866
+"SA","Saudi Arabia","Eastern Mediterranean",2022 W04,31565
+"SA","Saudi Arabia","Eastern Mediterranean",2022 W05,26253
+"SA","Saudi Arabia","Eastern Mediterranean",2022 W06,20614
+"SA","Saudi Arabia","Eastern Mediterranean",2022 W07,12080
+"SA","Saudi Arabia","Eastern Mediterranean",2022 W08,5411
+"SA","Saudi Arabia","Eastern Mediterranean",2022 W09,3377
+"SE","Sweden","Europe",2021 W49,17790
+"SE","Sweden","Europe",2021 W50,22950
+"SE","Sweden","Europe",2021 W51,29161
+"SE","Sweden","Europe",2021 W52,52499
+"SE","Sweden","Europe",2022 W01,100271
+"SE","Sweden","Europe",2022 W02,152825
+"SE","Sweden","Europe",2022 W03,235523
+"SE","Sweden","Europe",2022 W04,284351
+"SE","Sweden","Europe",2022 W05,205058
+"SE","Sweden","Europe",2022 W06,88395
+"SE","Sweden","Europe",2022 W07,23083
+"SE","Sweden","Europe",2022 W08,18134
+"SE","Sweden","Europe",2022 W09,13523
+"SI","Slovenia","Europe",2021 W49,10190
+"SI","Slovenia","Europe",2021 W50,8625
+"SI","Slovenia","Europe",2021 W51,7590
+"SI","Slovenia","Europe",2021 W52,10314
+"SI","Slovenia","Europe",2022 W01,21757
+"SI","Slovenia","Europe",2022 W02,39924
+"SI","Slovenia","Europe",2022 W03,62131
+"SI","Slovenia","Europe",2022 W04,98985
+"SI","Slovenia","Europe",2022 W05,98758
+"SI","Slovenia","Europe",2022 W06,56658
+"SI","Slovenia","Europe",2022 W07,32049
+"SI","Slovenia","Europe",2022 W08,15178
+"SI","Slovenia","Europe",2022 W09,11609
+"SK","Slovakia","Europe",2021 W49,45382
+"SK","Slovakia","Europe",2021 W50,31258
+"SK","Slovakia","Europe",2021 W51,19514
+"SK","Slovakia","Europe",2021 W52,18980
+"SK","Slovakia","Europe",2022 W01,18353
+"SK","Slovakia","Europe",2022 W02,16694
+"SK","Slovakia","Europe",2022 W03,38262
+"SK","Slovakia","Europe",2022 W04,82427
+"SK","Slovakia","Europe",2022 W05,116710
+"SK","Slovakia","Europe",2022 W06,124066
+"SK","Slovakia","Europe",2022 W07,113227
+"SK","Slovakia","Europe",2022 W08,87846
+"SK","Slovakia","Europe",2022 W09,67300
+"SM","San Marino","Europe",2021 W49,438.666666666667
+"SM","San Marino","Europe",2021 W50,559
+"SM","San Marino","Europe",2021 W51,446
+"SM","San Marino","Europe",2021 W52,782
+"SM","San Marino","Europe",2022 W01,1189
+"SM","San Marino","Europe",2022 W02,1110
+"SM","San Marino","Europe",2022 W03,1147
+"SM","San Marino","Europe",2022 W04,1113
+"SM","San Marino","Europe",2022 W05,647
+"SM","San Marino","Europe",2022 W06,404
+"SM","San Marino","Europe",2022 W07,199
+"SM","San Marino","Europe",2022 W08,165
+"SM","San Marino","Europe",2022 W09,149
+"SY","Syrian Arab Republic","Eastern Mediterranean",2021 W49,651
+"SY","Syrian Arab Republic","Eastern Mediterranean",2021 W50,504
+"SY","Syrian Arab Republic","Eastern Mediterranean",2021 W51,358
+"SY","Syrian Arab Republic","Eastern Mediterranean",2021 W52,259
+"SY","Syrian Arab Republic","Eastern Mediterranean",2022 W01,172
+"SY","Syrian Arab Republic","Eastern Mediterranean",2022 W02,192
+"SY","Syrian Arab Republic","Eastern Mediterranean",2022 W03,269
+"SY","Syrian Arab Republic","Eastern Mediterranean",2022 W04,341
+"SY","Syrian Arab Republic","Eastern Mediterranean",2022 W05,542
+"SY","Syrian Arab Republic","Eastern Mediterranean",2022 W06,800
+"SY","Syrian Arab Republic","Eastern Mediterranean",2022 W07,901
+"SY","Syrian Arab Republic","Eastern Mediterranean",2022 W08,853
+"SY","Syrian Arab Republic","Eastern Mediterranean",2022 W09,583
+"TH","Thailand","South-East Asia",2021 W49,27405
+"TH","Thailand","South-East Asia",2021 W50,22882
+"TH","Thailand","South-East Asia",2021 W51,18442
+"TH","Thailand","South-East Asia",2021 W52,19588
+"TH","Thailand","South-East Asia",2022 W01,39992
+"TH","Thailand","South-East Asia",2022 W02,54935
+"TH","Thailand","South-East Asia",2022 W03,53015
+"TH","Thailand","South-East Asia",2022 W04,55034
+"TH","Thailand","South-East Asia",2022 W05,64467
+"TH","Thailand","South-East Asia",2022 W06,96326
+"TH","Thailand","South-East Asia",2022 W07,118988
+"TH","Thailand","South-East Asia",2022 W08,157301
+"TH","Thailand","South-East Asia",2022 W09,157079
+"TJ","Tajikistan","Europe",2021 W49,0
+"TJ","Tajikistan","Europe",2021 W50,0
+"TJ","Tajikistan","Europe",2021 W51,0
+"TJ","Tajikistan","Europe",2021 W52,0
+"TJ","Tajikistan","Europe",2022 W01,0
+"TJ","Tajikistan","Europe",2022 W02,0
+"TJ","Tajikistan","Europe",2022 W03,59
+"TJ","Tajikistan","Europe",2022 W04,143
+"TJ","Tajikistan","Europe",2022 W05,47
+"TJ","Tajikistan","Europe",2022 W06,31
+"TJ","Tajikistan","Europe",2022 W07,13
+"TJ","Tajikistan","Europe",2022 W08,0
+"TJ","Tajikistan","Europe",2022 W09,0
+"TL","Timor-Leste","South-East Asia",2021 W49,1
+"TL","Timor-Leste","South-East Asia",2021 W50,4
+"TL","Timor-Leste","South-East Asia",2021 W51,0
+"TL","Timor-Leste","South-East Asia",2021 W52,6
+"TL","Timor-Leste","South-East Asia",2022 W01,17
+"TL","Timor-Leste","South-East Asia",2022 W02,7
+"TL","Timor-Leste","South-East Asia",2022 W03,5
+"TL","Timor-Leste","South-East Asia",2022 W04,69
+"TL","Timor-Leste","South-East Asia",2022 W05,466
+"TL","Timor-Leste","South-East Asia",2022 W06,1228
+"TL","Timor-Leste","South-East Asia",2022 W07,727
+"TL","Timor-Leste","South-East Asia",2022 W08,310
+"TL","Timor-Leste","South-East Asia",2022 W09,91
+"TM","Turkmenistan","Europe",2021 W49,0
+"TM","Turkmenistan","Europe",2021 W50,0
+"TM","Turkmenistan","Europe",2021 W51,0
+"TM","Turkmenistan","Europe",2021 W52,0
+"TM","Turkmenistan","Europe",2022 W01,0
+"TM","Turkmenistan","Europe",2022 W02,0
+"TM","Turkmenistan","Europe",2022 W03,0
+"TM","Turkmenistan","Europe",2022 W04,0
+"TM","Turkmenistan","Europe",2022 W05,0
+"TM","Turkmenistan","Europe",2022 W06,0
+"TM","Turkmenistan","Europe",2022 W07,0
+"TM","Turkmenistan","Europe",2022 W08,0
+"TM","Turkmenistan","Europe",2022 W09,0
+"TN","Tunisia","Eastern Mediterranean",2021 W49,1156
+"TN","Tunisia","Eastern Mediterranean",2021 W50,1419
+"TN","Tunisia","Eastern Mediterranean",2021 W51,1942
+"TN","Tunisia","Eastern Mediterranean",2021 W52,5048
+"TN","Tunisia","Eastern Mediterranean",2022 W01,13416
+"TN","Tunisia","Eastern Mediterranean",2022 W02,39487
+"TN","Tunisia","Eastern Mediterranean",2022 W03,66015
+"TN","Tunisia","Eastern Mediterranean",2022 W04,54346
+"TN","Tunisia","Eastern Mediterranean",2022 W05,39116
+"TN","Tunisia","Eastern Mediterranean",2022 W06,24734
+"TN","Tunisia","Eastern Mediterranean",2022 W07,21917
+"TN","Tunisia","Eastern Mediterranean",2022 W08,21141.4
+"TN","Tunisia","Eastern Mediterranean",2022 W09,9454
+"TR","Turkey","Europe",2021 W49,140463
+"TR","Turkey","Europe",2021 W50,131986
+"TR","Turkey","Europe",2021 W51,131886
+"TR","Turkey","Europe",2021 W52,232295
+"TR","Turkey","Europe",2022 W01,397444
+"TR","Turkey","Europe",2022 W02,486339
+"TR","Turkey","Europe",2022 W03,478562
+"TR","Turkey","Europe",2022 W04,556850
+"TR","Turkey","Europe",2022 W05,712091
+"TR","Turkey","Europe",2022 W06,683967
+"TR","Turkey","Europe",2022 W07,599596
+"TR","Turkey","Europe",2022 W08,541259
+"TR","Turkey","Europe",2022 W09,350828
+"UA","Ukraine","Europe",2021 W49,61615
+"UA","Ukraine","Europe",2021 W50,49059
+"UA","Ukraine","Europe",2021 W51,36973
+"UA","Ukraine","Europe",2021 W52,29414
+"UA","Ukraine","Europe",2022 W01,27935
+"UA","Ukraine","Europe",2022 W02,51985
+"UA","Ukraine","Europe",2022 W03,102997
+"UA","Ukraine","Europe",2022 W04,185014
+"UA","Ukraine","Europe",2022 W05,241590
+"UA","Ukraine","Europe",2022 W06,241641
+"UA","Ukraine","Europe",2022 W07,195071
+"UA","Ukraine","Europe",2022 W08,111224
+"UA","Ukraine","Europe",2022 W09,40265
+"UZ","Uzbekistan","Europe",2021 W49,1414
+"UZ","Uzbekistan","Europe",2021 W50,1327
+"UZ","Uzbekistan","Europe",2021 W51,1168
+"UZ","Uzbekistan","Europe",2021 W52,876
+"UZ","Uzbekistan","Europe",2022 W01,1223
+"UZ","Uzbekistan","Europe",2022 W02,4744
+"UZ","Uzbekistan","Europe",2022 W03,8682
+"UZ","Uzbekistan","Europe",2022 W04,8152
+"UZ","Uzbekistan","Europe",2022 W05,6877
+"UZ","Uzbekistan","Europe",2022 W06,4643
+"UZ","Uzbekistan","Europe",2022 W07,1828
+"UZ","Uzbekistan","Europe",2022 W08,1132
+"UZ","Uzbekistan","Europe",2022 W09,500
+"VA","Holy See","Europe",2021 W49,0
+"VA","Holy See","Europe",2021 W50,0
+"VA","Holy See","Europe",2021 W51,0
+"VA","Holy See","Europe",2021 W52,0
+"VA","Holy See","Europe",2022 W01,0
+"VA","Holy See","Europe",2022 W02,0
+"VA","Holy See","Europe",2022 W03,0
+"VA","Holy See","Europe",2022 W04,0
+"VA","Holy See","Europe",2022 W05,0
+"VA","Holy See","Europe",2022 W06,0
+"VA","Holy See","Europe",2022 W07,0
+"VA","Holy See","Europe",2022 W08,0
+"VA","Holy See","Europe",2022 W09,0
+"XK","Kosovo[1]","Europe",2021 W49,61
+"XK","Kosovo[1]","Europe",2021 W50,65
+"XK","Kosovo[1]","Europe",2021 W51,69
+"XK","Kosovo[1]","Europe",2021 W52,204
+"XK","Kosovo[1]","Europe",2022 W01,842
+"XK","Kosovo[1]","Europe",2022 W02,2990
+"XK","Kosovo[1]","Europe",2022 W03,13126
+"XK","Kosovo[1]","Europe",2022 W04,23466
+"XK","Kosovo[1]","Europe",2022 W05,14290
+"XK","Kosovo[1]","Europe",2022 W06,6094
+"XK","Kosovo[1]","Europe",2022 W07,2626
+"XK","Kosovo[1]","Europe",2022 W08,1147
+"XK","Kosovo[1]","Europe",2022 W09,467
+"YE","Yemen","Eastern Mediterranean",2021 W49,42
+"YE","Yemen","Eastern Mediterranean",2021 W50,34
+"YE","Yemen","Eastern Mediterranean",2021 W51,14
+"YE","Yemen","Eastern Mediterranean",2021 W52,16
+"YE","Yemen","Eastern Mediterranean",2022 W01,51
+"YE","Yemen","Eastern Mediterranean",2022 W02,140
+"YE","Yemen","Eastern Mediterranean",2022 W03,267
+"YE","Yemen","Eastern Mediterranean",2022 W04,578.2
+"YE","Yemen","Eastern Mediterranean",2022 W05,251
+"YE","Yemen","Eastern Mediterranean",2022 W06,415
+"YE","Yemen","Eastern Mediterranean",2022 W07,67
+"YE","Yemen","Eastern Mediterranean",2022 W08,29
+"YE","Yemen","Eastern Mediterranean",2022 W09,15
