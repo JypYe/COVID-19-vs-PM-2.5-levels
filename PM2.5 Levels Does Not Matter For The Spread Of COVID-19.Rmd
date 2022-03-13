@@ -1,0 +1,959 @@
+---
+title: "PM2.5 Levels Does Not Matter For The Spread Of COVID-19"
+author: "Jiayin Ye, 918914152"
+date: "3/13/2022"
+output:
+  html_document:
+    df_print: paged
+    fig_caption: yes
+    number_sections: yes
+---
+
+<style type="text/css">
+
+body{ /* Normal  */
+      font-size: 16px;
+      color: Black;
+  }
+h1.title {
+  font-size: 30px;
+}
+h1 { /* Header 1 */
+  font-size: 24px;
+
+}
+h2 { /* Header 2 */
+    font-size: 22px;
+}
+h3 { /* Header 3 */
+  font-size: 20px;
+}
+
+</style>
+
+```{css, echo=FALSE}
+.center {
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+}
+```
+
+```{css plotly-caption, echo = FALSE}
+div.figure {
+  display: table;
+}
+div.figure p {
+  display: table-caption;
+  caption-side: top;
+}
+```
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.pos = 'H',fig.align = 'center')
+```
+
+```{r library, echo=FALSE, include=FALSE, message=FALSE}
+library(readr)
+library(tidyr)
+library(dplyr)
+library(forcats)
+library(kableExtra)
+library(ggplot2)
+library(ggcorrplot)
+library(gridExtra)
+library(plotly)
+library(tsibble)
+library(lubridate)
+library(imputeTS)
+library(countrycode)
+library(stringr)
+library(lmerTest)
+library(car)
+library(reshape2)
+```
+
+# Abstract
+
+The COVID-19 pandemic causes millions of infected people and deaths, and it prompts serious recession and social disruption all over the world. This project attempts to investigate the association between the COVID-19 transmission level and PM2.5 levels during the Omicron crisis and whether the association is causal, using data from multiple resources and treating each country in each week as an observation with over 400 samples. A linear mixed model with weekly new cases per 100,000 persons as the response variable, PM2.5 levels with 1-week lag as key predictor controlling for other environmental, vaccination-related, policy-related, demographic, and socioeconomic confounding factors, are employed to examine the effects of PM2.5 levels on the COVID-19 transmission level. The results consistently indicated that there is no significant association between PM2.5 levels and the COVID-19 transmission level during the Omicron crisis. And we can not state that the relationship is causal. Based on the findings, we should not consider PM2.5 as a very important determinant of the spread of the COVID-19. 
+
+# Introduction
+
+The COVID-19 pandemic is an ongoing global pandemic of coronavirus disease 2019, which was first reported from an outbreak in Wuhan, China in December 2019. Millions of people died because of the pandemic, and it also prompts serious recession and social disruption all over the world, such as supply shortages, business, and education restrictions, racial issues$^{[1]}$.
+
+The Omicron variant, which was named by WHO on November 26th, 2021, has spread rapidly. And it is the dominant COVID-19 virus around the world after the outbreak of it. The WHO pointed out that Omicron accounted for over 98% of the COVID-19 virus sequences uploaded to the world's virus database in the week from Feb 7th, 2022 to Feb 13th, 2022.
+
+Many research analyzes the relationship between environments and the spread of covid 19. One research suggested that the COVID-19 virus can be carried by PM2.5 in the air when healthcare workers remove their protective equipment (Chan et al., 2020), and another research claimed theoretically that "PM could be both a direct and indirect transmission model for SARS-CoV-2 infection." (Tung et al., 2021) Carleton and Meng (2020) pointed out that temperature has a significant effect on COVID-19 transmission. And the long-term exposure to air pollution increases the COVID-19 mortality rate. (Wu et al., 2020)
+
+Thus, there are two questions I want to figure out:
+
+(1) Whether there is an association between the COVID-19 transmission level and PM2.5 levels during the Omicron crisis?
+
+(2) If so, is the relationship causal?
+
+which may provide support and reference to further research and even the environmental public policies aiming to prevent the spread of the COVID-19 or similar diseases.
+
+In this project, we mainly explore three data sets: 
+
+(1) the data set contains daily cases and deaths by date during the Omicron crisis from [the World Health Organization (WHO)](https://covid19.who.int/WHO-COVID-19-global-data.csv) website,
+
+(2) the air quality data from [The World Air Quality Index project](https://aqicn.org/data-platform/covid19/) during COVID-19 pandemic, including air pollutant species (PM2.5, PM10, Ozone, etc., which are all converted to the US EPA standard) as well as meteorological data (Wind, Temperature, etc.), 
+
+(3) the data set containing potential confounding factors, such as vaccine rate, population density, age distribution, from [Our World in Data](https://ourworldindata.org/coronavirus).
+
+The hypothesis is that the PM2.5 level will have a positive relationship with the spread of the COVID-19. Since COVID-19 spreads through the community via the air, the particulate matter could be a "carrier" of the virus. If people are exposed to a higher level of PM2.5, the possibility of COVID-19 transmission is larger.
+
+Since we focus on the Omicron period, we use data from December 6th, 2021 to March 6th, 2022. To answer the above questions, we use the number of weekly new COVID-19 cases per 100,000 persons, recommended by CDC, to measure the COVID-19 transmission level; the PM2.5 level is determined by U.S. EPA AQI of PM2.5 when the AQI PM2.5 is below 100, the PM2.5 level is "Healthy", otherwise the PM2.5 level is "Unhealthy".
+
+We use different countries in different weeks as observations. And we consider a 1-week lag for the effects of PM2.5 level and environmental factors, and a 2-week lag for the effects of the vaccine and government policy. And we fit a linear mixed model with the response variable weekly new cases per 100,000 persons, the key predictor PM2.5 level, controlling for other environmental, vaccination-related, policy-related, demographic, and socioeconomic confounding factors.
+
+
+# Background
+
+## Data sets
+
+We choose data from December 6th, 2021 to March 6th, 2022, and combine data from the following data sources.
+
+### WHO COVID-19 data
+
+The report contains extensive and selective discussion of the source of data, target population, sampling mechanism, explanation of variables, and reviews of existing research or known results that are relevant to this topic.
+
+The WHO global COVID-19 data set is "compiled through WHO region-specific dashboards, and/or aggregate count data reported to WHO headquarters daily"$^{[2]}$ by countries, territories, and areas. The sampling mechanisms are different in different countries since the testing methods, counts reported policy and other aspects may be different. In this data set, we choose country, WHO region, date, and new cases. 
+
+### The World Air Quality Index project (COVID-19)
+
+The World Air Quality Index project data is based on the daily median of data from more than 30,000 air quality monitoring stations for about 380 major cities in the world. The sampling mechanisms differ among different cities and counties' EPA (Environmental Protection Agencies). In this data set, the Air Quality Index standard is based on the US EPA standard, we choose country, date, PM2.5 AQI, humidity, temperature, and wind speed.
+
+### Our World in Data (COVID-19)
+
+This data set is collected from multiple sources by countries, territories, and areas, such as World Bank, United Nations, Oxford COVID-19 Government Response Tracker, Blavatnik School of Government. In this data set, we choose country, date, population, population density, median age, and GDP per capita which are fixed data, people fully vaccinated per 100 persons, and stringency_index which are updated daily.
+
+### Data processing
+
+For the WHO data set, we choose countries from four regions: Eastern Mediterranean, Europe, Americas, South-East Asia. We consider the new cases as missing values if they are negative or if they are 0 and the average new cases of their countries in the week are over 50 because it is abnormal. Then we select the countries with less than 5% missing values and imputed the missing values of new cases by the average new cases of their countries in the week. And we calculate the weekly new cases grouped by week and country.
+
+For the PM2.5 and meteorological data, we use the median of data collected by different cities in the country to measure the condition of the country. We select the countries with less than 5% missing values in all variables and calculate the median of variables grouped by week and countries.
+
+For the vaccination-related, policy-related, demographic, and socioeconomic confounding factors from Our World in Data, since the data in each country varies little across weeks, we first aggregate data by week and country, and then select the countries with less than 20% missing values in all variables, and replace the missing values by the average of the t − 1 week and the t + 1 week of the variables of their countries.
+
+### The lag effect
+
+According to the research from CDC, the incubation period of Omicron is about 3 days, so we consider the time lag between the weekly new cases and the PM 2.5 and humidity, temperature, and wind speed is 1 week. 
+
+And since the vaccine and response policy all take 14 days to be fully effective, we consider the time lag between the weekly new cases and people fully vaccinated per 100 persons and stringency index is 2 weeks.
+
+### The final data 
+
+The final data set contains 455 observations of 35 countries in 13 weeks on 13 variables.
+
+The `New_cases_per 100000`, which is the weekly new cases per 100,000 persons is calculated by the weekly new cases divided by the population.
+
+Again, the PM2.5 level is determined by the U.S. EPA AQI of PM2.5, when the AQI PM2.5 is below 100, the PM2.5 level is "Healthy", otherwise the PM2.5 level is "Unhealthy".
+
+```{r, echo = FALSE, include = TRUE, message = F}
+variable_table = data.frame(variable = c("Country","WHO_region","Week_order","New_cases_per_100000","pm2.5level","humidity","temperature","windspeed","people_fully_vaccinated_per_100","stringency_index","population_density","median_age","gdp_per_capita"), 
+                            type = c("factor", "factor", "factor", "numeric", "factor", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric"),
+                            description = c("Country names",
+                                            "WHO regions: Eastern Mediterranean, Europe, Americas, South-East Asia",
+                                            "The order of weeks from December 6th, 2021 to March 6th, 2022",
+                                            "The weekly new cases per 100,000 persons",
+                                            "The PM2.5 AQI category according to the PM2.5 AQI value: 0~100 (Healthy), 100+ (Unhealthy)",
+                                            "The weekly median humidity in 1 week ago:%",
+                                            "The weekly median temperature in 1 week ago:°C",
+                                            "The weekly median wind speed in 1 week ago:m/s",
+                                            "The weekly average of people who are fully vaccinated per 100 persons in 2 weeks ago",
+                                            "The weekly average of stringency index in 2 weeks ago: a composite measure based on nine response indicators including
+school closures, workplace closures, and travel bans, rescaled to a value from 0 to 100 (100 = strictest)",
+                                            "Population density of the country",
+                                            "The median age of the country",
+                                            "GDP per capita of the country"
+                                            )
+                            )
+kable(variable_table,caption = "Table 1: The variables of the final data") %>%
+  kable_classic(full_width=F)
+```
+
+## Related research
+
+Kotsiou et al. (2021) claim that PM2.5 pollution influences COVID-19 spread. Zhu et al. (2020) point out that PM2.5 is positively related to the COVID-19 cases. And PM2.5 exposure is also associated with COVID-19 deaths. (Mele and Magazzino, 2020; Coker et al., 2020) WHat's more, Vasquez-Apestegui et al. (2020) reveal that long-term PM2.5 exposure contributes to higher rates of COVID-19 transmission.
+
+
+# COVID-19 condition during the Omicron crisis
+
+Based on the Data Source in WHO, some countries conducted "data reconciliation exercises which remove large numbers of cases or deaths from their total counts", so new cases or new deaths may be negative numbers. We consider these values as missing values.
+
+```{r covid data, echo=FALSE, include=FALSE, message=FALSE}
+covid <- read_csv("https://covid19.who.int/WHO-COVID-19-global-data.csv")
+covid <- covid %>% filter(Date_reported >= as.Date("2021-12-06") & Date_reported <= as.Date("2022-03-06"), WHO_region != "Other") %>%
+mutate(WHO_region = fct_recode(WHO_region,"Eastern Mediterranean" = "EMRO","Europe" = "EURO","Africa" = "AFRO","Western Pacific" = "WPRO","Americas" = "AMRO","South-East Asia" = "SEARO"))
+
+#write.csv(covid,"covid_original.csv",row.names = F)
+
+covid$Date_reported <- as.Date(covid$Date_reported)
+covid <- as.data.frame(unclass(covid),stringsAsFactors = TRUE)
+colnames(covid)[1] <- "Date"
+
+covid$New_cases[covid$New_cases<0] <- NA
+covid$New_deaths[covid$New_deaths<0] <- NA
+```
+
+To get a picture of the COVID-19 condition, summary statistics and visualizations about daily new cases, daily new deaths, and case mortality rate versus time in the world were produced.
+
+```{r summary statistics, echo=FALSE, include=T, message=FALSE}
+covid1 <- covid
+covid1$Case_Mortality<- covid1$Cumulative_deaths/covid1$Cumulative_cases
+options(knitr.kable.NA = '')
+
+kable(summary(covid1[,-2])[,1:4],caption = "Table 2: The summary statistics of the COVID-19 condition") %>% 
+  kable_classic(full_width=F)
+kable(summary(covid1[,-2])[,5:8],caption = "Table 2: (continuing)") %>% 
+  kable_classic(full_width=F)
+```
+
+<div class = 'center'>
+```{r world, echo=FALSE, include=T, message=FALSE, fig.height=3,fig.width=9, fig.cap='Figure 1: Condition in the world',fig.align='center', fig.topcaption=TRUE}
+covid_all <- covid1 %>%
+  select(Date, New_cases, New_deaths, Case_Mortality) %>%
+  group_by(Date) %>%
+  summarise(New_cases = sum(New_cases, na.rm = T), New_deaths = sum(New_deaths, na.rm = T), Case_Mortality = mean(Case_Mortality, na.rm=T))
+  
+world_case <- ggplot(covid_all, aes(x=Date,y=New_cases)) + geom_line(col=2) +
+  scale_y_continuous(labels = scales::comma) + theme_classic() + labs(x = "", y= "", color = "")
+case_a <- list(
+  text = "New cases",
+  xref = "paper",
+  yref = "paper",
+  yanchor = "bottom",
+  xanchor = "center",
+  align = "center",
+  x = 0.5,
+  y = 1,
+  showarrow = FALSE
+)
+world_case_ly <- ggplotly(world_case) %>% layout(annotations = case_a)
+
+world_death <- ggplot(covid_all, aes(x=Date,y=New_deaths)) + geom_line(col=3) +
+  scale_y_continuous(labels = scales::comma) + theme_classic() + labs(x = "", y= "", color = "")
+death_a <- list(
+  text = "New deaths",
+  xref = "paper",
+  yref = "paper",
+  yanchor = "bottom",
+  xanchor = "center",
+  align = "center",
+  x = 0.5,
+  y = 1,
+  showarrow = FALSE
+)
+world_death_ly <- ggplotly(world_death) %>% layout(annotations = death_a)
+
+world_mortality <- ggplot(covid_all, aes(x=Date,y=Case_Mortality)) + geom_line(col=3) +
+  scale_y_continuous(labels = scales::comma) + theme_classic() + labs(x = "", y= "", color = "")
+mortality_a <- list(
+  text = "Case mortality rates",
+  xref = "paper",
+  yref = "paper",
+  yanchor = "bottom",
+  xanchor = "center",
+  align = "center",
+  x = 0.5,
+  y = 1,
+  showarrow = FALSE
+)
+world_mortality_ly <- ggplotly(world_mortality) %>% layout(annotations = mortality_a)
+
+subplot(world_case_ly,world_death_ly,world_mortality_ly,nrows=1,margin = 0.07, titleX = TRUE, titleY = TRUE) %>% layout(showlegend = FALSE)
+```
+</div>
+
+There was a dramatic increase in the daily new cases, which are mainly caused by the rapid spread of the Omicron variant. The Omicron variant spreads much more easily than the original virus and previous variants that cause COVID-19.
+
+The daily new deaths in the world has a similar pattern, there was an increase in the daily new deaths around January, 2022. 
+
+However, the case mortality rate decreases over time, the Omicron infection doesn't cause more severe disease than the infection with the original virus and previous variants.
+
+Then, we explore the daily new cases versus time in the six WHO regions.
+
+<div class = 'center'>
+```{r region, echo=FALSE, include=T, message=FALSE, fig.cap='Figure 2: Condition in six WHO regions', fig.align='center', fig.topcaption=TRUE}
+covidr <- covid1 %>% group_by(Date, WHO_region) %>% summarize(New_cases = sum(New_cases, na.rm = T))
+
+line1 <- covidr %>% filter(WHO_region=="Eastern Mediterranean") %>% 
+  ggplot(aes(x=Date,y=New_cases)) + geom_line(col="#065535") + theme_classic() +
+  labs(x = "", y= "", color = "")
+
+line2 <- covidr %>% filter(WHO_region=="Europe") %>% 
+  ggplot(aes(x=Date,y=New_cases)) + geom_line(col="#800000") + theme_classic() +
+  labs(x = "", y= "", color = "")
+
+line3 <- covidr %>% filter(WHO_region=="Africa") %>% 
+  ggplot(aes(x=Date,y=New_cases)) + geom_line(col="#0a75ad") + theme_classic() +
+  labs(x = "", y= "", color = "")
+
+line4 <- covidr %>% filter(WHO_region=="Western Pacific") %>% 
+  ggplot(aes(x=Date,y=New_cases)) + geom_line(col="#3399ff") + theme_classic() +
+  labs(x = "", y= "", color = "")
+
+line5 <- covidr %>% filter(WHO_region=="Americas") %>% 
+  ggplot(aes(x=Date,y=New_cases)) + geom_line(col="#bada55") + theme_classic() +
+  labs(x = "", y= "", color = "")
+
+line6 <- covidr %>% filter(WHO_region=="South-East Asia") %>%
+  ggplot(aes(x=Date,y=New_cases)) + geom_line(col="#ff80ed") + theme_classic() +
+  labs(x = "", y= "", color = "")
+
+a1 <- list(
+  text = "New cases in Eastern Mediterranean",
+  xref = "paper",
+  yref = "paper",
+  yanchor = "bottom",
+  xanchor = "center",
+  align = "center",
+  x = 0.5,
+  y = 1,
+  showarrow = FALSE
+)
+linely1 <- ggplotly(line1) %>% layout(annotations = a1)
+
+a2 <- list(
+  text = "New cases in Europe",
+  xref = "paper",
+  yref = "paper",
+  yanchor = "bottom",
+  xanchor = "center",
+  align = "center",
+  x = 0.5,
+  y = 1,
+  showarrow = FALSE
+)
+linely2 <- ggplotly(line2) %>% layout(annotations = a2)
+
+a3 <- list(
+  text = "New cases in Africa",
+  xref = "paper",
+  yref = "paper",
+  yanchor = "bottom",
+  xanchor = "center",
+  align = "center",
+  x = 0.5,
+  y = 1,
+  showarrow = FALSE
+)
+linely3 <- ggplotly(line3) %>% layout(annotations = a3)
+
+a4 <- list(
+  text = "New cases in Western Pacific",
+  xref = "paper",
+  yref = "paper",
+  yanchor = "bottom",
+  xanchor = "center",
+  align = "center",
+  x = 0.5,
+  y = 1,
+  showarrow = FALSE
+)
+linely4 <- ggplotly(line4) %>% layout(annotations = a4)
+
+a5 <- list(
+  text = "New cases in Americas",
+  xref = "paper",
+  yref = "paper",
+  yanchor = "bottom",
+  xanchor = "center",
+  align = "center",
+  x = 0.5,
+  y = 1,
+  showarrow = FALSE
+)
+linely5 <- ggplotly(line5) %>% layout(annotations = a5)
+
+a6 <- list(
+  text = "New cases in South-East Asia",
+  xref = "paper",
+  yref = "paper",
+  yanchor = "bottom",
+  xanchor = "center",
+  align = "center",
+  x = 0.5,
+  y = 1,
+  showarrow = FALSE
+)
+linely6 <- ggplotly(line6) %>% layout(annotations = a6)
+
+subplot(linely1,linely2,linely3,linely4,linely5,linely6, nrows=3,margin = 0.07, titleX = TRUE, titleY = TRUE) %>% layout(showlegend = FALSE)
+```
+</div>
+
+The daily new cases in six regions all have a rapid increase on around December 2021, the Omicron variant affects all regions. And during the period, Eastern Mediterranean, Europe, Americas, South-East Asia have similar patterns, so we choose countries from these 4 WHO regions.
+
+And from the above figures, there are short-term fluctuations every week, so we use weekly new cases per 100,000 persons to measure the spread of COVID-19 in order to remove the periodic effect.
+
+
+```{r missing ratio, eval=FALSE, echo=FALSE, include=F, message=FALSE}
+missingratio <- function(country, variable, date) {
+  as.data.frame(table(country[is.na(variable)])/length(unique(date))) 
+}
+```
+
+```{r covid, eval=FALSE, echo=FALSE, include=F, message=FALSE}
+covid2 <- covid1[,1:5] %>% filter(WHO_region %in% c("Eastern Mediterranean","Europe","Americas" = "AMRO","South-East Asia"))
+covid2$Week <- yearweek(covid2$Date)
+# deal with missing values
+covid2_mean <- covid2 %>% group_by(Country,Week) %>% summarise(mean_cases = mean(New_cases, na.rm = T))
+covid3 <- inner_join(covid2,covid2_mean,by=c("Country","Week"))
+covid3$New_cases[covid3$New_cases==0 & covid3$mean_cases>=50] <- NA
+
+Country_missing <- missingratio(covid3$Country,covid3$New_cases,covid3$Date) %>% filter(Freq>0.05) %>% select(Var1)
+
+covid3 <- covid3[!covid3$Country %in% Country_missing$Var1,1:6]
+
+covid4 <- covid3 %>% group_by(Country_code,Country,WHO_region,Week) %>% summarise(New_cases = mean(New_cases, na.rm = T)*7)
+
+write.csv(covid4,"covid_final.csv",row.names = F)
+```
+
+```{r air, eval=FALSE, echo=FALSE, include=F, message=FALSE}
+air2022 <- read_csv("https://aqicn.org/data-platform/covid19/report/34928-0d219881/2020",skip=4)
+air2022 <- air2022 %>% filter(Date <= as.Date("2022-03-06")-7)
+
+air2021Q4 <- read_csv("https://aqicn.org/data-platform/covid19/report/34928-0d219881/2021Q4",skip=4)
+air2021Q4 <- air2021Q4 %>% filter(Date >= as.Date("2021-12-06")-14)
+
+air <- rbind(air2021Q4,air2022)
+write.csv(air,"air_original.csv",row.names = F)
+
+air1 <- air %>% filter(Specie %in% c("humidity","temperature","wind-speed","pm25")) %>% group_by(Date,Country,Specie) %>% summarise(median = median(median))
+
+air2 <- spread(air1,Specie,median)
+air2$Week <- yearweek(air2$Date)
+
+missingpm25 <- missingratio(air2$Country,air2$pm25,air2$Date) %>% filter(Freq>0.05) %>% select(Var1)
+
+missinghumidity <- missingratio(air2$Country,air2$humidity,air2$Date) %>% filter(Freq>0.05) %>% select(Var1)
+
+missingtemperature <- missingratio(air2$Country,air2$temperature,air2$Date) %>% filter(Freq>0.05) %>% select(Var1)
+
+missingwindspeed <- missingratio(air2$Country,air2$`wind-speed`,air2$Date) %>% filter(Freq>0.05) %>% select(Var1)
+
+country_drop <-  union(union(union(missingpm25,missinghumidity),missingtemperature),missingwindspeed)
+
+air3 <- air2[!air2$Country %in% country_drop$Var1,]
+
+air4 <- air3 %>% group_by(Country,Week) %>% summarise(pm25 = median(pm25, na.rm = T), humidity = median(humidity, na.rm = T), temperature = median(temperature, na.rm = T), windspeed = median(`wind-speed`, na.rm = T)) 
+
+country_remain <- air4 %>% group_by(Country) %>% summarise(weekn = length(unique(Week))) %>% filter(weekn==max(weekn)) %>% select(Country)
+
+air5 <- air4[air4$Country %in% country_remain$Country,]
+
+write.csv(air5,"air_final.csv",row.names = F)
+```
+
+```{r owid, eval=FALSE, echo=FALSE, include=F, message=FALSE}
+owid <- read_csv("https://covid.ourworldindata.org/data/owid-covid-data.csv")
+owid <- owid %>% filter(date >= as.Date("2021-12-06")-14 & date <= as.Date("2022-03-06")-14)
+owid <- owid[,c(1,3:4,43,48:51,54)]
+write.csv(owid,"owid_original.csv",row.names = F)
+owid$Week <- yearweek(owid$date)
+
+owid1 <- owid %>% group_by(iso_code,Week) %>% summarise(people_fully_vaccinated_per_100 = mean(people_fully_vaccinated_per_hundred, na.rm=T), stringency_index = mean(stringency_index, na.rm=T), population = mean(population, na.rm=T), population_density = mean(population_density, na.rm=T), median_age = mean(median_age, na.rm=T), gdp_per_capita = mean(gdp_per_capita, na.rm=T))
+
+owid_cor <- na.omit(owid1[,c(1,3,8)])
+
+cor(owid_cor$people_fully_vaccinated_per_100,owid_cor$gdp_per_capita)
+
+missingvaccinated <- missingratio(owid1$iso_code, owid1$people_fully_vaccinated_per_100, owid1$Week) %>% filter(Freq>0.2) %>% select(Var1)
+
+missingstringency_index <- missingratio(owid1$iso_code,owid1$stringency_index,owid1$Week) %>% filter(Freq>0.2) %>% select(Var1)
+
+missingpopulation <- missingratio(owid1$iso_code,owid1$population,owid1$Week) %>% filter(Freq>0.2) %>% select(Var1)
+
+missingpopulation_density <- missingratio(owid1$iso_code,owid1$population_density,owid1$Week) %>% filter(Freq>0.2) %>% select(Var1)
+
+missingmedian_age <- missingratio(owid1$iso_code,owid1$median_age,owid1$Week) %>% filter(Freq>0.2) %>% select(Var1)
+
+missinggdp_per_capita <- missingratio(owid1$iso_code,owid1$gdp_per_capita,owid1$Week) %>% filter(Freq>0.2) %>% select(Var1)
+
+country_drop <-  union(union(union(union(union(missingvaccinated,missingstringency_index),missingpopulation),missingpopulation_density),missingmedian_age),missinggdp_per_capita)
+
+country_remain <- owid1[!owid1$iso_code %in% country_drop$Var1,] %>% group_by(iso_code) %>% summarise(weekn = length(unique(Week))) %>% filter(weekn==max(weekn)) %>% select(iso_code)
+
+owid2 <- owid1[owid1$iso_code %in% country_remain$iso_code,] %>% group_by(iso_code) %>% summarise(Week=Week,people_fully_vaccinated_per_100=na_ma(people_fully_vaccinated_per_100, k=1, weighting = "simple"), stringency_index = na_ma(stringency_index, k=1, weighting = "simple"), population = na_ma(population, k=1,weighting = "simple"), population_density = na_ma(population_density, k=1,weighting = "simple"), median_age = na_ma(median_age, k=1,weighting = "simple"), gdp_per_capita = na_ma(gdp_per_capita, k=1,weighting = "simple"))
+
+owid2$iso_code <- countrycode(owid2$iso_code, origin = "iso3c", destination = "iso2c")
+
+write.csv(owid2,"owid_final.csv",row.names = F)
+```
+
+```{r merge data,eval=FALSE, echo=FALSE, include=F, message=FALSE, fig.width=10}
+weekorder <- data.frame(Week_order = 1:15,Week = c("2021 W47","2021 W48","2021 W49","2021 W50","2021 W51","2021 W52","2022 W01","2022 W02","2022 W03","2022 W04","2022 W05","2022 W06","2022 W07","2022 W08","2022 W09"))
+
+covid_final <- read_csv("covid_final.csv")
+covid_final <- left_join(covid_final,weekorder,by="Week")
+
+air_final <- read_csv("air_final.csv")
+air_final <- left_join(air_final,weekorder,by="Week")
+air_final$Week_order <- air_final$Week_order+1
+
+owid_final <- read_csv("owid_final.csv")
+owid_final <- left_join(owid_final,weekorder,by="Week")
+owid_final$Week_order <- owid_final$Week_order + 2
+
+data1 <- inner_join(covid_final,air_final,by=c("Country_code"="Country","Week_order"="Week_order"))
+
+data2 <- inner_join(data1,owid_final,by=c("Country_code"="iso_code","Week_order"="Week_order"))
+
+data2$New_cases_per_100000 <- data2$New_cases/data2$population * 100000
+
+data <- data2[,c(2:3,6,8:11,13:14,16:19)]
+data$pm2.5level <- as.factor(ifelse(data$pm25>100,"Unhealthy","Healthy"))
+data <- data[,-4]
+write.csv(data,"data.csv",row.names = F)
+```
+
+# Descriptive analysis
+
+## Univariate descriptive analysis
+
+To get a picture of the final data set, summary statistics were produced. The summary statistics of categorical variables are
+
+```{r,echo = FALSE, message = F, include = TRUE}
+data <- read_csv("data.csv")
+data$Week_order <- as.factor(data$Week_order)
+data <- as.data.frame(unclass(data),stringsAsFactors = TRUE)
+
+facsum <- cbind(data.frame(Country=c(paste0("Count: ",length(levels(data$Country))),NA,NA),Week_order=c(paste0("Count: ",length(levels(data$Week_order))),NA,NA)),data.frame(WHO_region=as.data.frame(summary(data[,c(2,13)]))[1:3,3],pm2.5level=as.data.frame(summary(data[,c(2,13)]))[4:6,3]))
+
+options(knitr.kable.NA = '')
+kable(facsum,
+      caption = "Table 3: summary statistics of categorical variables") %>% 
+  kable_classic(full_width=F)
+```
+
+The summary statistics of numerical variables are
+
+```{r,echo = FALSE, message = F, include = TRUE}
+summary_num <- round(rbind(sapply(data[sapply(data,class)!='factor'],function(x) sd(x,na.rm = T)),sapply(data[sapply(data,class)!='factor'],summary)),2)
+rownames(summary_num)[1] <- 'sd'
+
+kable(summary_num[,1:5],caption = "Table 4: summary statistics of numerical variables") %>% 
+  kable_classic(full_width=F)
+kable(summary_num[,6:9],caption = "Table 4: (continuing)") %>% 
+  kable_classic(full_width=F)
+```
+
+The values of population density and GDP per capita are large, we need to take the log transformation.
+
+```{r,echo = FALSE, message = F, include = F}
+data$population_density <- log(data$population_density)
+data$gdp_per_capita <- log(data$gdp_per_capita)
+```
+
+## Multivariate descriptive analysis
+
+### Weekly new cases per 100,000 persons v.s. PM2.5 level
+
+<div class = 'center'>
+```{r pm2.5 level,echo = FALSE, message = F, include = TRUE, fig.width=5, fig.height=3, fig.align='center',fig.cap='Figure 3: Weekly new cases per 100,000 persons v.s. PM2.5 level', fig.topcaption=TRUE}
+ggplot(data, aes(x=pm2.5level,y=New_cases_per_100000,fill=pm2.5level)) +
+  geom_boxplot() + 
+  labs(y="Weekly new cases per 100,000 persons", x="PM2.5 level") +
+  theme_classic()
+```
+</div>
+
+Different from the hypothesis, the "Healthy" PM2.5 level has the highest weekly new cases per 100,000 persons and largest variance, while the "Unhealthy" PM2.5 level has the lowest weekly new cases per 100,000 persons and smallest variance.
+
+### Weekly new cases per 100,000 persons v.s. Confounders
+
+<div class = 'center'>
+```{r confounder,echo = FALSE, message = F, include = TRUE, fig.width=10, fig.align='center',fig.cap='Figure 4: Weekly new cases per 100,000 persons v.s. Confounders', fig.topcaption=TRUE}
+p1 <- ggplot(data, aes(x=windspeed,y=New_cases_per_100000)) +
+  geom_point(color="#065535") + 
+  labs(y="", x="Wind speed", title="") +
+  theme_classic()
+
+p2 <- ggplot(data, aes(x=temperature,y=New_cases_per_100000)) +
+  geom_point(color="#800000") + 
+  labs(y="", x="Temperature", title="") +
+  theme_classic()
+
+p3 <- ggplot(data, aes(x=humidity,y=New_cases_per_100000)) +
+  geom_point(color="#0a75ad") + 
+  labs(y="", x="Humidity", title="") +
+  theme_classic()
+
+p4 <- ggplot(data, aes(x=people_fully_vaccinated_per_100,y=New_cases_per_100000)) +
+  geom_point(color="#065535") + 
+  labs(y="", x="People fully vaccinated", title="") +
+  theme_classic()
+
+p5 <- ggplot(data, aes(x=stringency_index,y=New_cases_per_100000)) +
+  geom_point(color="#800000") + 
+  labs(y="", x="Stringency index", title="") +
+  theme_classic()
+
+p6 <- ggplot(data, aes(x=log(population_density),y=New_cases_per_100000)) +
+  geom_point(color="#800000") + 
+  labs(y="", x="Log population density", title="") +
+  theme_classic()
+
+p7 <- ggplot(data, aes(x=median_age,y=New_cases_per_100000)) +
+  geom_point(color="#3399ff") + 
+  labs(y="", x="Median age", title="") +
+  theme_classic()
+
+p8 <- ggplot(data, aes(x=log(gdp_per_capita),y=New_cases_per_100000)) +
+  geom_point(color="#bada55") + 
+  labs(y="", x="Log GDP per capita", title="") +
+  theme_classic()
+
+grid.arrange(p1, p2, p3, p4, p5, p6, p7, p8, ncol = 4)
+```
+</div>
+
+Higher wind speed, lower temperature, higher humidity, and higher people fully vaccinated per 100 persons, higher median age, higher log GDP per capita tend to have higher weekly new cases per 100,000 persons, respectively, while the relationship between stringency index and weekly new cases per 100,000 persons and the relationship between log population density and weekly new cases per 100,000 persons are not obvious.
+
+### Correlation between confounders
+
+<div class = 'center'>
+```{r corr,echo = FALSE, message = F, include = TRUE, fig.align='center',fig.cap='Figure 5: Correlation between confounders', fig.topcaption=TRUE}
+correlation_matrix <- round(cor(data[sapply(data,is.numeric)]),1)
+
+corp <- ggcorrplot(correlation_matrix, hc.order = T, type ="lower", 
+           lab = TRUE, 
+           lab_size = 3)
+ggplotly(corp)
+```
+</div>
+
+People fully vaccinated per 100 persons and log GDP per capita are highly positively correlated with a correlation coefficient of 0.8. Thus, higher people fully vaccinated per 100 persons tends to have higher weekly new cases per 100,000 persons, which was shown in above section, may be caused by that countries developing better have higher people fully vaccinated per 100 persons and more social and economic activities which causes higher weekly new cases per 100,000 persons.
+
+# Inferential analysis
+
+## Box cox transformation to the response variable
+
+We check the distribution of the response variable: weekly new cases per 100,000 persons, which is right-skewed, so we apply proper box cox transformation to it with $\lambda=0.26$.
+
+```{r, echo=FALSE, include=FALSE, message=FALSE}
+data1 <- data
+bc <- boxCox(lm(New_cases_per_100000 ~ pm2.5level, data=data1))
+lambda <- bc$x[which.max(bc$y)]
+data1$New_cases_per_100000 <- (data1$New_cases_per_100000^lambda-1)/lambda
+```
+
+## Multicollinearity
+
+Since people fully vaccinated per 100 persons is highly correlated with log GDP per capita, and the VIF values of the two variables are around 5, we remove the variable: people fully vaccinated per 100 persons from the model, and the VIF are all below 2.5. 
+
+## Define the model
+
+We want to propose a model to determine the causal relationship between the PM2.5 level and weekly new cases per 100,000 persons, and we use the data from some countries and some weeks. Since the observations in the same week or the same country are correlated, and we care about the population but not the specific country effects or the specific week effects, we include the random effects of week and country. So we plan to use a linear mixed model$^{[6]}$.
+
+### Tests for the random interaction terms
+
+```{r, echo=FALSE, include=FALSE, message=FALSE}
+model1 <- lmer(New_cases_per_100000~pm2.5level+humidity+temperature+windspeed+stringency_index+population_density+median_age+gdp_per_capita+(1|Country)+(1|stringency_index:Country)+(1|Week_order),data = data1)
+conint <- confint(model1, oldNames = FALSE)
+
+#model2 <- lmer(New_cases_per_100000~pm2.5level+humidity+temperature+windspeed+stringency_index+population_density+median_age+gdp_per_capita+(1|Country)+(1|gdp_per_capita:Country)+(1|Week_order),data = data1)
+
+#model3 <- lmer(New_cases_per_100000~pm2.5level+humidity+temperature+windspeed+stringency_index+population_density+median_age+gdp_per_capita+(1|Country)+(1|median_age:Country)+(1|Week_order),data = data1)
+
+#model4 <- lmer(New_cases_per_100000~pm2.5level+humidity+temperature+windspeed+stringency_index+population_density+median_age+gdp_per_capita+(1|Country)+(1|population_density:Country)+(1|Week_order),data = data1)
+```
+
+Then we consider if there exists the random interaction terms between the demographic confounders: stringency index, log population density, median age, log GDP per capita, and country. 
+
+However, when we include the random interaction term log population density:country, median age:country, log GDP per capita:country in the model separately, the model failed to converge, so we think we should not add the three random interaction terms. 
+
+Next, we want to test whether there exists the random interaction term stringency index:country by constructing 95% profiled confidence intervals for the standard deviations of random terms.
+
+```{r, echo=FALSE, include=T, message=FALSE}
+kable(conint[1:3,],
+      caption = "Table 5: 95% profiled confidence intervals for the standard deviations of random terms") %>% 
+  kable_classic(full_width=F)
+```
+
+There is statistical evidence that the random interaction term:stringency index:country, the random terms: country and week are really needed at the significance level 0.05, as the corresponding confidence intervals are over zero. And it is reasonable, the random term country can control for the unmeasurable confounder: adherence to the policy of a country, the effect of stringency index, which measures the strictness of COVID-19 response policy of a country, depends on the adherence to the policy of a country.
+
+### The final model
+
+Finally, we define the model as:
+
+$$\boldsymbol{y} = X \boldsymbol{\beta} + Z \boldsymbol{u} + \boldsymbol{\epsilon}$$ 
+where
+
+$\boldsymbol y$ is the vector of weekly new cases per 100,000 persons in each country of each week;
+
+$\boldsymbol \beta$ is the vector of fixed effects of PM2.5 level, humidity, temperature, wind speed, stringency index, population density, median age, and GDP per capita;
+
+$\boldsymbol X$ is the design matrix relating the observations $\boldsymbol y$ to $\boldsymbol \beta$.
+
+$\boldsymbol u$ is the vector of random effects of week, country, and stringency index:country;
+
+$\boldsymbol Z$ is the design matrix relating the observations $\boldsymbol y$ to $\boldsymbol u$.
+
+$\boldsymbol \varepsilon$ is the vector of random errors.
+
+The assumptions of the model are:
+
+(1) $\boldsymbol u \sim N(\boldsymbol 0,G)$
+
+(2) $\boldsymbol \epsilon \sim N(\boldsymbol 0,R)$
+
+(3) $Cov(\boldsymbol u,\boldsymbol \epsilon)=\boldsymbol 0$
+
+(4) No multicollinearity
+
+## Model fitting
+
+We fit the final model, and the fitting results are as following tables.
+
+```{r, echo=FALSE, include=T, message=FALSE}
+kable(round(summary(model1,corr=F)$coefficients[,c(1,2,5)],4),
+      caption = "Table 6: The coefficients of the fixed effects for the final model") %>% 
+  kable_classic(full_width=F)
+```
+
+The p-value of PM2.5 level Unhealthy is 0.7976 > 0.05, so holding other variables constant, PM2.5 levels has no significant association with the weekly new cases per 100,000 persons at the significance level 0.05.
+
+The p-value of temperature is 0.0185 < 0.05, so holding other variables constant, the temperature has a significant negative association with the weekly new cases per 100,000 persons at the significance level 0.05.
+
+The p-value of median age is 0.0131 < 0.05, and the p-value of log GDP per capita is 0.0004 < 0.05, so holding other variables constant, median age and log GDP per capita have a significant positive association with the weekly new cases per 100,000 persons at significance level 0.05, respectively.
+
+```{r, echo=FALSE, include=T, message=FALSE}
+kable(conint[1:4,],
+      caption = "Table 7: 95% profiled confidence intervals for the standard deviations of random terms and error terms") %>% 
+  kable_classic(full_width=F)
+```
+
+Again, there are significant random effects of stringency index:country, country, and week on the weekly new cases per 100,000 persons at significance level 0.05, as the corresponding confidence intervals are over zero. 
+
+We can conclude that there is no significant association between PM2.5 levels and the COVID-19 transmission level during the Omicron crisis.
+
+### Analysis about the results of PM2.5 levels
+
+To find out which confounders influence the significance of the association between PM2.5 levels and the weekly new cases per 100,000 persons, because the temperature, median age, and log GDP per capita have a significant association with the weekly new cases per 100,000 persons, we fit the linear regression models with response variable: the weekly new cases per 100,000 persons and predictors: PM2.5 levels and all possible combinations of the three confounders.
+
+We find that when holding the median age and log GDP per capita constant, the p-value of PM2.5 level Unhealthy is 0.6875 > 0.05, PM2.5 levels have no significant association with the weekly new cases per 100,000 persons at the significance level 0.05. 
+
+```{r, echo=FALSE, include=T, message=FALSE}
+kable(round(summary(lm(New_cases_per_100000~median_age+gdp_per_capita+pm2.5level,data1))$coefficients,4),
+      caption = "Table 8: The coefficients of the linear regression model") %>% 
+  kable_classic(full_width=F)
+```
+
+Based on the coefficients of median age and log GDP per capita in the above table, we construct a new factor named development, and the definition is as follows.
+
+```{r, echo=FALSE, include=T, message=FALSE}
+development <- data.frame(condition=c("0.4138 median_age + 4.5525 log gdp_per_capita > 55","0.4138 median_age + 4.5525 log gdp_per_capita <= 55"),level=c('Good','Moderate'))
+  
+kable(development,
+      caption = "Table 9: The definition of development") %>% 
+  kable_classic(full_width=F)
+```
+
+From the following figure, there is no obvious differences in the weekly new cases per 100,000 persons across PM2.5 levels after controlling for development: a combination of median age and log GDP per capita.
+
+<div class = 'center'>
+```{r, echo = FALSE, message = F, include = TRUE, fig.width=5, fig.height=3, fig.align='center',fig.cap='Figure 6: PM2.5 levels vs confounder', fig.topcaption=TRUE}
+data1$development <- ifelse((0.4138*data1$median_age+4.5525*data1$gdp_per_capita)>55,'Good','Moderate')
+ggplot(data1, aes(x=development,y=New_cases_per_100000,fill=pm2.5level)) + geom_boxplot() + theme_classic()
+```
+</div>
+
+# Sensitivity analysis
+
+To examine the certainty of final model, I need to examine the plausibility of above assumptions.
+
+## Model diagnosis
+
+<div class = 'center'>
+```{r,echo = FALSE, message = F, include = TRUE, fig.align='center',fig.height=4,fig.width=5,fig.cap='Figure 7: The residuals vs fitted values', fig.topcaption=TRUE}
+# residual
+plot(model1)
+```
+</div>
+
+<div class = 'center'>
+```{r,echo = FALSE, message = F, include = TRUE, fig.align='center',fig.cap='Figure 8: Normal QQ plots', fig.topcaption=TRUE}
+## QQ-plots
+par(mfrow = c(2, 2))
+
+qqnorm(ranef(model1)$Week_order[, 1], 
+       main = "Random effects of week")
+qqline(ranef(model1)$Week_order[, 1])
+
+qqnorm(ranef(model1)$Country[, 1], 
+       main = "Random effects of country")
+qqline(ranef(model1)$Country[, 1])
+
+qqnorm(ranef(model1)$'stringency_index:Country'[, 1], 
+       main = "Random interaction")
+qqline(ranef(model1)$'stringency_index:Country'[, 1])
+
+qqnorm(resid(model1), main = "Residuals")
+qqline(resid(model1))
+```
+</div>
+
+(1). The residuals vs fitted values plot shows that the residuals are scattered randomly and equally around 0 without a significant pattern except for some outliers, so the error terms have 0 means and equal variances.
+
+(2). Normal QQ plots show slight deviation from Normal distribution, so the distributions of random effects and error terms are all roughly Normal distributions.
+
+```{r, echo=FALSE, include=T, message=FALSE}
+VIF <- cbind(names(vif(model1)[1:4]),round(vif(model1)[1:4],2),names(vif(model1)[5:8]),round(vif(model1)[5:8],2))
+rownames(VIF) <- NULL
+colnames(VIF) <- c('Variables','VIF','Variables','VIF')
+  
+kable(VIF,
+      caption = "Table 10: VIF of the final model") %>% 
+  kable_classic(full_width=F)
+```
+
+(3). All VIFs are below 2.5, so there is almost no multicollinearity in the model.
+
+## Model with countries in Europe
+
+We only use data from countries in Europe to fit the model, to test if there is an influence of WHO regions.
+
+### Model fitting
+```{r, echo=FALSE, include=F, message=FALSE}
+data2 <- data1 %>% filter(WHO_region=="Europe")
+
+model0 <- lmer(New_cases_per_100000~pm2.5level+humidity+temperature+windspeed+stringency_index+population_density+median_age+gdp_per_capita+(1|Country)+(1|stringency_index:Country)+(1|Week_order),data = data2)
+conint0 <- confint(model0, oldNames = FALSE)
+```
+We fit the final model, and the fitting results are as following tables.
+
+```{r, echo=FALSE, include=T, message=FALSE}
+kable(round(summary(model0,corr=F)$coefficients[,c(1,2,5)],4),
+      caption = "Table 11: The coefficients of the fixed effects for the final model") %>% 
+  kable_classic(full_width=F)
+```
+
+The p-value of PM2.5 level Unhealthy is 0.4937 > 0.05, so holding other variables constant, PM2.5 levels has no significant association with the weekly new cases per 100,000 persons at the significance level 0.05.
+
+The p-value of log GDP per capita is 0.0074 < 0.05, so holding other variables constant, log GDP per capita has a significant positive association with the weekly new cases per 100,000 persons at the significance level 0.05.
+
+```{r, echo=FALSE, include=T, message=FALSE}
+kable(conint0[1:4,],
+      caption = "Table 12: 95% profiled confidence intervals for the standard deviations of random terms and error terms") %>% 
+  kable_classic(full_width=F)
+```
+
+Again, there are significant random effects of stringency index:country, country, and week on the weekly new cases per 100,000 persons at significance level 0.05, as the corresponding confidence intervals are over zero. 
+
+The conclusion is the same as the previous conclusion. There is no significant association between PM2.5 levels and the COVID-19 transmission level during the Omicron crisis.
+
+### Model Diagnosis
+
+To examine the certainty of above model, I need to examine the plausibility of above assumptions.
+
+<div class = 'center'>
+```{r,echo = FALSE, message = F, include = TRUE, fig.align='center',fig.height=4,fig.width=5,fig.cap='Figure 9: The residuals vs fitted values', fig.topcaption=TRUE}
+# residual
+plot(model0)
+```
+</div>
+
+<div class = 'center'>
+```{r,echo = FALSE, message = F, include = TRUE, fig.align='center',fig.cap='Figure 10: Normal QQ plots', fig.topcaption=TRUE}
+## QQ-plots
+par(mfrow = c(2, 2))
+
+qqnorm(ranef(model0)$Week_order[, 1], 
+       main = "Random effects of week")
+qqline(ranef(model1)$Week_order[, 1])
+
+qqnorm(ranef(model0)$Country[, 1], 
+       main = "Random effects of country")
+qqline(ranef(model0)$Country[, 1])
+
+qqnorm(ranef(model0)$'stringency_index:Country'[, 1], 
+       main = "Random interaction")
+qqline(ranef(model0)$'stringency_index:Country'[, 1])
+
+qqnorm(resid(model0), main = "Residuals")
+qqline(resid(model0))
+```
+</div>
+
+Again, the residuals are scattered randomly and equally around 0 without a significant pattern except for some outliers, so the error terms have 0 means and equal variances; the distributions of random effects and error terms are all roughly Normal distributions.
+
+```{r, echo=FALSE, include=T, message=FALSE}
+VIF0 <- cbind(names(vif(model0)[1:4]),round(vif(model0)[1:4],2),names(vif(model0)[5:8]),round(vif(model0)[5:8],2))
+rownames(VIF0) <- NULL
+colnames(VIF0) <- c('Variables','VIF','Variables','VIF')
+  
+kable(VIF0,
+      caption = "Table 13: VIF of the final model") %>% 
+  kable_classic(full_width=F)
+```
+
+All VIFs are below 2.5, so there is almost no multicollinearity in the model.
+
+## Compare with similar research
+
+Some researchers argue that the concentration of PM2.5 may be positively associated with the confirmed cases of COVID-19. (Wang et al.,2020; Zoran et al.,2020) However, they didn't control for demographic factors and public health interventions. Coccia (2021) also reveals that high air pollution is positively related to COVID-19 cases, but the model didn't consider socioeconomic factors. 
+
+Zhu et al.(2020) state that there was a significant relationship between PM2.5 and COVID-19 infection after controlling for confounding factors. The study used data from multiple cities in one country, while our study used data from multiple countries involving combined data from numerous monitors operated by different agencies, and there may be other influences related to data collection, which may cause errors in the data. 
+
+Thus, using data from cities in only one country after controlling for confounding factors may be a future direction for investigating the relationship between PM2.5 and COVID-19 infection. 
+
+# Causal Inference
+
+Higher lockdown stringency significantly decreased the PM2.5 concentrations. (Chossière et al.,2021) Thus, the stringency index, which is the confounder in the model, may have effects on both the treatment: PM2.5 levels and the response variable: the weekly new cases per 100,000 persons. We can not conclude that the PM2.5 level has no causal effect on the COVID-19 transmission level during the Omicron crisis.
+
+# Conclusion and Discussion
+
+By analyzing data from WHO, the WAQI project, and OWID during the Omicron crisis, I use the weekly new cases per 100,000 persons as the response variable, and PM2.5 levels with 1-week lag as the key predictor, controlling for humidity, temperature, wind speed with 1-week lag; stringency index with 2-week lag; log population density, median age, and log GDP per capita to build a linear mixed model with random effects of the week, country and the interaction stringency index:country, in order to explore the association between PM2.5 levels and the COVID-19 transmission level during the Omicron crisis. And then I test the reliability of the model by diagnosing the model assumptions and using countries only in Europe to build the final model.
+
+There is no significant association between PM2.5 levels and the COVID-19 transmission level during the Omicron crisis. And we can not conclude that the PM2.5 level has no causal effect on the COVID-19 transmission level during the Omicron crisis. Thus, we should not consider PM2.5 as a key determinant of the spread of the COVID-19 virus, although PM2.5 is a threat to public health.
+
+This study comprehensively considers the environmental, vaccination-related, policy-related, demographic, and socioeconomic confounding factors compared with formal research. However, while our study used data from multiple countries involving combined data from different agencies with different data collection policies, there may be errors in the data. Maybe analyzing the association between PM2.5 and the COVID-19 transmission level using data from cities in only one country can be further explored.
+
+# Acknowledgement {.unnumbered}
+
+The report have been helped by Professor Shizhe Chen, TA Zitong Zhang, and STA 207 Piazza discussions.
+
+# Reference {.unnumbered}
+
+[1] Wikipedia contributors. (2022). COVID-19 pandemic. In Wikipedia, The Free Encyclopedia. Retrieved 18:59, February 18, 2022, from <https://en.wikipedia.org/w/index.php?title=COVID-19_pandemic&oldid=1072113008>
+
+[2] WHO COVID-19 Dashboard. Geneva: World Health Organization, 2020. Available online: https://covid19.who.int/
+
+[3]Tamma Carleton, Kyle C. Meng, Causal empirical estimates suggest COVID-19 transmission rates are highly seasonal, medRxiv 2020.03.26.20044420; doi: <https://doi.org/10.1101/2020.03.26.20044420>
+
+[4] Nguyen Thanh Tung, Po-Ching Cheng, Kai-Hsien Chi, Ta-Chi Hsiao, Timothy Jones, Kelly BéruBé, Kin-Fai Ho, Hsiao-Chi Chuang, Particulate matter and SARS-CoV-2: A possible model of COVID-19 transmission, Science of The Total Environment, Volume 750, 2021, 141532, ISSN 0048-9697, <https://doi.org/10.1016/j.scitotenv.2020.141532>.
+
+[5] Wu, X., Nethery, R. C., Sabath, M. B., Braun, D. and Dominici, F., 2020. Air pollution and COVID-19 mortality in the United States: Strengths and limitations of an ecological regression analysis. Science advances, 6(45), p.eabd4049.
+
+[6] Wikipedia contributors. (2022, February 24). Mixed model. In Wikipedia, The Free Encyclopedia. Retrieved 21:05, March 4, 2022, from <https://en.wikipedia.org/w/index.php?title=Mixed_model&oldid=1073722080>
+
+[7] Chan JF, Yuan S, Kok KH, et al. A familial cluster of pneumonia associated with the 2019 novel coronavirus indicating person-to-person transmission: a study of a family cluster. Lancet. 2020;395(10223):514-523. [doi:10.1016/S0140-6736(20)30154-9](doi:10.1016/S0140-6736(20)30154-9){.uri}
+
+[8] Kotsiou, O. S., Kotsios, V. S., Lampropoulos, I., Zidros, T., Zarogiannis, S. G., & Gourgoulianis, K. I. (2021). PM2.5 Pollution Strongly Predicted COVID-19 Incidence in Four High-Polluted Urbanized Italian Cities during the Pre-Lockdown and Lockdown Periods. International journal of environmental research and public health, 18(10), 5088. https://doi.org/10.3390/ijerph18105088
+
+[9] Mele, M., & Magazzino, C. (2020). Pollution, economic growth, and COVID-19 deaths in India: A machine learning evidence. Environmental Science and Pollution Research, 28, 2669–2677. http://link.springer.com/10.1007/s11356-020-10689-0
+
+[10] Vasquez-Apestegui, V., Parras-Garrido, E., Tapia, V., Paz-Aparicio, V. M., Rojas, J. P., Sánchez-Ccoyllo, O. R., & Gonzales, G. F. (2020). Association between air pollution in Lima and the high incidence of COVID-19: Findings from a post hoc analysis. ResearchSquare. https://doi.org/10.21203/rs.3.rs-39404/v1
+
+[11] Coker, E. S., Cavalli, L., Fabrizi, E., Guastella, G., Lippo, E., Parisi, M. L., Pontarollo, N., Rizzati, M., Varacca, A., & Vergalli, S. (2020). The effects of air pollution on COVID-19 related mortality in Northern Italy. Environmental and Resource Economics, 76(4), 611–634.
+
+[12] Wang, B., Liu, J., Li, Y. et al. Airborne particulate matter, population mobility and COVID-19: a multi-city study in China. BMC Public Health 20, 1585 (2020). https://doi.org/10.1186/s12889-020-09669-3
+
+[13] Zoran, M. A., Savastru, R. S., Savastru, D. M., & Tautan, M. N. (2020). Assessing the relationship between surface levels of PM2.5 and PM10 particulate matter impact on COVID-19 in Milan, Italy. The Science of the total environment, 738, 139825. https://doi.org/10.1016/j.scitotenv.2020.139825
+
+[14] Coccia M. (2021). How do low wind speeds and high levels of air pollution support the spread of COVID-19?. Atmospheric pollution research, 12(1), 437–445. https://doi.org/10.1016/j.apr.2020.10.002
+# Session info {.unnumbered}
+
+[15] Zhu, Y., Xie, J., Huang, F., & Cao, L. (2020). Association between short-term exposure to air pollution and COVID-19 infection: Evidence from China. The Science of the total environment, 727, 138704. https://doi.org/10.1016/j.scitotenv.2020.138704
+
+[16] Adhikari, A., & Yin, J. (2020). Short-Term Effects of Ambient Ozone, PM2.5, and Meteorological Factors on COVID-19 Confirmed Cases and Deaths in Queens, New York. International Journal of Environmental Research and Public Health, 17(11), 4047. https://doi.org/10.3390/ijerph17114047
+
+[17] Chossière, G. P., Xu, H., Dixit, Y., Isaacs, S., Eastham, S. D., Allroggen, F., Speth, R. L., & Barrett, S. (2021). Air pollution impacts of COVID-19-related containment measures. Science advances, 7(21), eabe1178. https://doi.org/10.1126/sciadv.abe1178
+
+```{r}
+sessionInfo()
+```
